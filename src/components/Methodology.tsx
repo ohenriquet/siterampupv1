@@ -3,11 +3,11 @@ import React from 'react';
 
 const Methodology: React.FC = () => {
   const steps = [
-    { title: "OKRs da Empresa", icon: "target", tag: "Contexto" },
-    { title: "Políticas de RH", icon: "gavel", tag: "Normas" },
+    { title: "Dados Empresa", icon: "business", tag: "Contexto" },
+    { title: "Playbooks RH", icon: "gavel", tag: "Regras" },
     { title: "Arquitetura de Sistemas", icon: "account_tree", tag: "Técnico" },
-    { title: "Onboarding de Time", icon: "group_add", tag: "Cultura" },
-    { title: "Glossário Interno", icon: "translate", tag: "Linguagem" },
+    { title: "Cultura do Time", icon: "groups", tag: "Cultura" },
+    { title: "Playbook de Time", icon: "psychology", tag: "Específico" },
   ];
 
   return (

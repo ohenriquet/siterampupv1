@@ -6,15 +6,6 @@ import Header from './Header';
 const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen w-full flex flex-col items-center justify-start overflow-hidden" id="hero">
-      {/* Background Image Container */}
-      <div className="absolute inset-0 z-0 h-full pointer-events-none">
-        <img 
-          alt="Premium Landscape" 
-          className="w-full h-full object-cover object-top sticky top-0" 
-          src={IMAGES.HERO_BG} 
-        />
-        <div className="absolute inset-0 hero-gradient"></div>
-      </div>
 
       <Header />
 
@@ -53,13 +44,13 @@ const Hero: React.FC = () => {
 
           <div className="relative w-full max-w-lg mx-auto">
             <form className="w-full liquid-glass p-2 flex items-center shadow-xl" onSubmit={(e) => e.preventDefault()}>
-              <input 
-                className="flex-1 bg-transparent border-none focus:ring-0 px-6 text-sm font-semibold text-white placeholder:text-white/60" 
-                placeholder="Seu e-mail corporativo" 
-                type="email" 
+              <input
+                className="flex-1 bg-transparent border-none focus:ring-0 px-6 text-sm font-semibold text-white placeholder:text-white/60"
+                placeholder="Seu e-mail corporativo"
+                type="email"
               />
-              <button 
-                className="flex items-center gap-2 bg-[#4A30E4] hover:bg-[#3b25c7] text-white pl-8 pr-4 py-3 rounded-[8px] transition-all shadow-lg flex-shrink-0 group" 
+              <button
+                className="flex items-center gap-2 bg-[#4A30E4] hover:bg-[#3b25c7] text-white pl-8 pr-4 py-3 rounded-[8px] transition-all shadow-lg flex-shrink-0 group"
                 type="submit"
               >
                 <span className="text-sm font-semibold uppercase tracking-tight">acelerar</span>

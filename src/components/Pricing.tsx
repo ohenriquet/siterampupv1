@@ -6,13 +6,13 @@ const Pricing: React.FC = () => {
     {
       title: "Ramp-up Especializado",
       subtitle: "EQUIPES",
-      price: "A partir de R$ 490/mês",
+      price: "A partir de R$ 3.424/mês",
       highlight: false
     },
     {
       title: "Onboarding Organizacional",
       subtitle: "EMPRESAS",
-      price: "A partir de R$ 890/mês",
+      price: "A partir de R$ 990/mês",
       highlight: true
     },
     {
@@ -32,8 +32,8 @@ const Pricing: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
           {plans.map((plan, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className={`frosted-glass-card p-10 flex flex-col text-left h-auto transition-all ${plan.highlight ? 'border-2 border-primary/20 scale-105 z-10' : ''}`}
             >
               <h4 className="font-display text-2xl font-[800] mb-1 text-[#1A1A1A] leading-tight">{plan.title}</h4>
@@ -42,11 +42,11 @@ const Pricing: React.FC = () => {
                 <p className="text-[#1A1A1A] font-bold text-xl opacity-80">{plan.price}</p>
               </div>
               <div className="mt-auto pt-6">
-                <a 
-                  className="w-full inline-block py-4 text-center rounded-full bg-[#4A30E4] text-white font-bold hover:bg-[#3b25c7] transition-all shadow-lg text-sm uppercase tracking-tight" 
+                <a
+                  className="w-full inline-block py-4 text-center rounded-full bg-[#4A30E4] text-white font-bold hover:bg-[#3b25c7] transition-all shadow-lg text-sm uppercase tracking-tight"
                   href="#hero"
                 >
-                  acelerar
+                  agendar
                 </a>
               </div>
             </div>
