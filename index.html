@@ -1,14 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eva - AI Ramp-up Buddy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
         tailwind.config = {
@@ -42,15 +45,17 @@
         .hero-gradient {
             background: linear-gradient(180deg, rgba(26, 26, 26, 0.1) 0%, rgba(26, 26, 26, 0.2) 60%, rgba(26, 26, 26, 0.5) 100%);
         }
+
         .ultra-glass-panel {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(64px) saturate(250%);
             -webkit-backdrop-filter: blur(64px) saturate(250%);
             border: 1px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 
-                0 25px 50px -12px rgba(0, 0, 0, 0.15), 
+            box-shadow:
+                0 25px 50px -12px rgba(0, 0, 0, 0.15),
                 0 0 60px rgba(255, 255, 255, 0.25) inset;
         }
+
         .liquid-glass {
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(30px);
@@ -58,6 +63,7 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 1.5rem;
         }
+
         .frosted-glass-card {
             background: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(12px);
@@ -66,6 +72,7 @@
             border-radius: 1.5rem;
             transition: all 0.3s ease;
         }
+
         .dark-glass-card {
             background: rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(16px);
@@ -73,26 +80,22 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 1.5rem;
         }
+
         .testimonial-carousel {
             mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
         }
+
         .transition-blur {
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
         }
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3"
-  }
-}
-</script>
 </head>
+
 <body class="font-sans bg-white text-[#1A1A1A] overflow-x-hidden">
     <div id="root"></div>
+    <script type="module" src="/src/index.tsx"></script>
 </body>
+
 </html>

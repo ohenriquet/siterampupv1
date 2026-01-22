@@ -13,16 +13,16 @@ const Header: React.FC = () => {
             <span className="text-xl font-display font-extrabold tracking-tight text-white uppercase">Eva</span>
           </div>
           <ul className="hidden md:flex items-center gap-8 text-[11px] font-semibold uppercase tracking-widest text-white/90">
-            <li><a className="hover:text-primary transition-colors" href="#quem-somos">Quem somos</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#quem-somos">O que fazemos</a></li>
             <li><a className="hover:text-primary transition-colors" href="#como-funciona">Como funciona</a></li>
             <li><a className="hover:text-primary transition-colors" href="#quem-atendemos">Quem atendemos</a></li>
           </ul>
         </div>
-        <a 
-          className="bg-[#4A30E4] hover:bg-[#3b25c7] text-white px-10 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg uppercase tracking-tight" 
+        <a
+          className="bg-[#4A30E4] hover:bg-[#3b25c7] text-white px-10 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg uppercase tracking-tight"
           href="#contratar"
         >
-          acelerar
+          agendar
         </a>
       </nav>
     </header>
