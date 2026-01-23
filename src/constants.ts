@@ -9,7 +9,10 @@ export const PARTNERS = [
   { name: "META IT", logo: "/logos/meta.png" },
   { name: "LWSA", logo: "/logos/lwsa.png" },
   { name: "CAST", logo: "/logos/cast.png" },
-  { name: "ILIA", logo: "/logos/ilia.png" }
+  { name: "PITANG", logo: "/logos/pitang.png" },
+  { name: "BLEND", logo: "/logos/blend.png" },
+  { name: "STARIAN", logo: "/logos/starian.png" },
+  { name: "TELTEC", logo: "/logos/teltec.png" }
 ];
 
 export const TESTIMONIALS = [

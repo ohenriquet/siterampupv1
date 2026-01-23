@@ -5,28 +5,28 @@ import Header from './Header';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center justify-start overflow-hidden" id="hero">
+    <section className="relative min-h-[60vh] w-full flex flex-col items-center justify-start overflow-hidden pt-4" id="hero">
 
       <Header />
 
-      <main className="relative z-10 w-full px-6 mt-12 flex flex-col items-center flex-grow">
-        <div className="ultra-glass-panel w-full max-w-[900px] rounded-[32px] p-10 md:p-14 text-center relative">
-          <div className="inline-flex items-center px-6 py-2 liquid-glass mb-8 mx-auto text-center">
+      <main className="relative z-10 w-full px-6 mt-2 flex flex-col items-center flex-grow">
+        <div className="ultra-glass-panel w-full max-w-[1000px] rounded-[32px] p-4 md:p-7 text-center relative">
+          <div className="inline-flex items-center px-6 py-1.5 liquid-glass mb-3 mx-auto text-center">
             <span className="text-[11px] font-semibold tracking-[0.1em] text-white leading-relaxed">
               90% das Fortune 250 têm mentoria. <a href="https://www.forbes.com/councils/forbescommunicationscouncil/2022/05/19/does-mentoring-still-matter-for-fortune-500-companies/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/80 transition-colors">Forbes</a>
             </span>
           </div>
 
-          <h1 className="font-display tracking-tight text-white mb-4">
-            <span className="block text-[46px] md:text-[72px] leading-[1.1] font-[800]">Equipes mais produtivas</span>
-            <span className="block text-[46px] md:text-[72px] leading-[1.1] font-[800]">com Buddy System</span>
+          <h1 className="font-display tracking-tight text-white mb-1.5">
+            <span className="block text-[42px] md:text-[64px] leading-[1.05] font-[800]">Equipes mais produtivas</span>
+            <span className="block text-[42px] md:text-[64px] leading-[1.05] font-[800]">com Buddy System</span>
           </h1>
 
-          <h2 className="text-white/90 text-sm md:text-lg font-medium max-w-[850px] mx-auto leading-relaxed mb-12">
+          <h2 className="text-white/90 text-xs md:text-sm font-medium max-w-[800px] mx-auto leading-relaxed mb-4">
             A Eva combina templates de workflow por área, checkpoints bidirecionais 30/60/90 e buddy system automatizado para acelerar a evolução de cada novo integrante.
           </h2>
 
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
+          <div className="flex flex-wrap justify-center gap-2 mb-4">
             <div className="liquid-glass px-5 py-3 flex items-center gap-4">
               <span className="material-symbols-outlined text-white/40 text-xl">traffic</span>
               <span className="text-[10px] md:text-[11px] font-bold text-white uppercase tracking-wider">Templates de workflow por área</span>
@@ -63,16 +63,16 @@ const Hero: React.FC = () => {
       </main>
 
       {/* Logos Marquee */}
-      <div className="relative z-10 w-full pb-12 overflow-hidden mt-12 [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+      <div className="relative z-10 w-full pb-8 overflow-hidden mt-6 [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
         <div className="animate-infinite-scroll flex items-center gap-16 md:gap-24 whitespace-nowrap px-8">
-          {[...PARTNERS, ...PARTNERS].map((partner, idx) => {
-            const isPriority = partner.name === "SOFTPLAN" || partner.name === "META IT";
+          {([...PARTNERS, ...PARTNERS]).map((partner, idx) => {
+            const isSmallLogo = partner.name === "SOFTPLAN" || partner.name === "TELTEC";
             return (
               <img
                 key={idx}
                 src={partner.logo}
                 alt={partner.name}
-                className={`${isPriority ? 'h-10 md:h-16' : 'h-7 md:h-10'} w-auto opacity-50 hover:opacity-100 transition-all duration-500 filter brightness-0 invert flex-shrink-0`}
+                className={`${isSmallLogo ? 'h-16 md:h-[90px]' : 'h-11 md:h-[64px]'} w-auto opacity-50 hover:opacity-100 transition-all duration-500 filter brightness-0 invert flex-shrink-0`}
               />
             );
           })}
