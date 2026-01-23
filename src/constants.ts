@@ -4,7 +4,13 @@ export const IMAGES = {
   CASE_STUDY: "https://lh3.googleusercontent.com/aida-public/AB6AXuCbaJN9InzS9IWXW-JDMM6VNAiyGL3SrxWTKyNEYj4joExcW7gliOJOzZ1ZXq6KWFL5WULICKF3wtNjA-zZymFBbVShk-tFN_SrzqYs4Buh6QauNhR_pLlGxQfkgUXjnSTqK-c1j1WUHppGF5N9mzJErTy9L7oZ9jNlW511uBuBfa0_VOKjgpwICnK6pKBahVQnNuJ4rgmZCFYDVBWeCzQ2g4q0zX-llHKbCWX56Wu8ktyXw_vbc_8rJEdJaJLk5mHjK6PzmW8kKso"
 };
 
-export const PARTNERS = ["SOFTPLAN", "META IT", "LWSA", "VERICODE", "CAST", "ILIA"];
+export const PARTNERS = [
+  { name: "SOFTPLAN", logo: "/logos/softplan.png" },
+  { name: "META IT", logo: "/logos/meta.png" },
+  { name: "LWSA", logo: "/logos/lwsa.png" },
+  { name: "CAST", logo: "/logos/cast.png" },
+  { name: "ILIA", logo: "/logos/ilia.png" }
+];
 
 export const TESTIMONIALS = [
   {

@@ -6,11 +6,8 @@ const Header: React.FC = () => {
     <header className="relative z-50 w-full px-6 pt-6">
       <nav className="max-w-6xl mx-auto flex items-center justify-between px-8 py-4 rounded-full bg-white/10 backdrop-blur-xl border border-white/20">
         <div className="flex items-center gap-10">
-          <div className="flex items-center gap-2">
-            <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M13,2L3,14H10L8,22L18,10H11L13,2Z"></path>
-            </svg>
-            <span className="text-xl font-display font-extrabold tracking-tight text-white uppercase">Eva</span>
+          <div className="flex items-center">
+            <img src="/logo eva principal.png" alt="Eva Logo" className="h-10 w-auto" />
           </div>
           <ul className="hidden md:flex items-center gap-8 text-[11px] font-semibold uppercase tracking-widest text-white/90">
             <li><a className="hover:text-primary transition-colors" href="#quem-somos">O que fazemos</a></li>

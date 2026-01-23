@@ -7,11 +7,8 @@ const Footer: React.FC = () => {
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
           <div className="md:col-span-5">
-            <div className="flex items-center gap-2 mb-8">
-              <svg className="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M13,2L3,14H10L8,22L18,10H11L13,2Z"></path>
-              </svg>
-              <span className="font-display text-2xl font-extrabold tracking-tight uppercase text-primary">Eva</span>
+            <div className="flex items-center mb-8">
+              <img src="/logo eva pequena.png" alt="Eva Logo" className="h-8 w-auto" />
             </div>
             <div className="flex gap-4">
               <a className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
@@ -38,7 +35,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="pt-8 border-t border-gray-200 flex flex-col items-start gap-4">
           <p className="text-gray-400 text-[11px] font-semibold uppercase tracking-widest">
-            Eva People © 2025. Todos os direitos reservados. 
+            Eva People © 2025. Todos os direitos reservados.
             <a className="hover:text-primary ml-2" href="#">Política de Privacidade</a>
           </p>
         </div>

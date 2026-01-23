@@ -11,34 +11,33 @@ const Hero: React.FC = () => {
 
       <main className="relative z-10 w-full px-6 mt-12 flex flex-col items-center flex-grow">
         <div className="ultra-glass-panel w-full max-w-[900px] rounded-[32px] p-10 md:p-14 text-center relative">
-          <div className="inline-flex items-center px-6 py-2 liquid-glass mb-8 mx-auto">
-            <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-white">Para empresas e equipes</span>
+          <div className="inline-flex items-center px-6 py-2 liquid-glass mb-8 mx-auto text-center">
+            <span className="text-[11px] font-semibold tracking-[0.1em] text-white leading-relaxed">
+              90% das Fortune 250 têm mentoria. <a href="https://www.forbes.com/councils/forbescommunicationscouncil/2022/05/19/does-mentoring-still-matter-for-fortune-500-companies/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/80 transition-colors">Forbes</a>
+            </span>
           </div>
 
-          <h1 className="font-display tracking-tight text-white mb-8">
-            <span className="block text-[40px] md:text-[56px] leading-[1.1] font-[800]">A Eva acelera</span>
-            <span className="block text-[48px] md:text-[72px] leading-[1.1] my-2 font-[800]">o ramp up de 0 a 100</span>
-            <span className="block text-[24px] md:text-[36px] leading-[1.2] font-[300] mt-4">usando uma fração do tempo e recursos</span>
+          <h1 className="font-display tracking-tight text-white mb-4">
+            <span className="block text-[46px] md:text-[72px] leading-[1.1] font-[800]">Equipes mais produtivas</span>
+            <span className="block text-[46px] md:text-[72px] leading-[1.1] font-[800]">com Buddy System</span>
           </h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
-            <div className="liquid-glass p-6 flex flex-col items-center gap-3 text-center">
-              <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
-                <span className="material-symbols-outlined text-[#4A30E4] text-xl">auto_awesome</span>
-              </div>
-              <p className="text-[11px] font-semibold text-white leading-tight uppercase tracking-wider">Templates de workflows prontos</p>
+          <h2 className="text-white/90 text-sm md:text-lg font-medium max-w-[850px] mx-auto leading-relaxed mb-12">
+            A Eva combina templates de workflow por área, checkpoints bidirecionais 30/60/90 e buddy system automatizado para acelerar a evolução de cada novo integrante.
+          </h2>
+
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
+            <div className="liquid-glass px-5 py-3 flex items-center gap-4">
+              <span className="material-symbols-outlined text-white/40 text-xl">traffic</span>
+              <span className="text-[10px] md:text-[11px] font-bold text-white uppercase tracking-wider">Templates de workflow por área</span>
             </div>
-            <div className="liquid-glass p-6 flex flex-col items-center gap-3 text-center">
-              <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
-                <span className="material-symbols-outlined text-[#4A30E4] text-xl">timer</span>
-              </div>
-              <p className="text-[11px] font-semibold text-white leading-tight uppercase tracking-wider">Economia de ~22h por entrada</p>
+            <div className="liquid-glass px-5 py-3 flex items-center gap-4">
+              <span className="material-symbols-outlined text-white/40 text-xl">traffic</span>
+              <span className="text-[10px] md:text-[11px] font-bold text-white uppercase tracking-wider">Checkpoints bidirecionais 30/60/90</span>
             </div>
-            <div className="liquid-glass p-6 flex flex-col items-center gap-3 text-center">
-              <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
-                <span className="material-symbols-outlined text-[#4A30E4] text-xl">rocket_launch</span>
-              </div>
-              <p className="text-[11px] font-semibold text-white leading-tight uppercase tracking-wider">3.5x mais produtividade no 1º ano</p>
+            <div className="liquid-glass px-5 py-3 flex items-center gap-4">
+              <span className="material-symbols-outlined text-white/40 text-xl">traffic</span>
+              <span className="text-[10px] md:text-[11px] font-bold text-white uppercase tracking-wider">Buddy system automatizado</span>
             </div>
           </div>
 
@@ -64,13 +63,19 @@ const Hero: React.FC = () => {
       </main>
 
       {/* Logos Marquee */}
-      <div className="relative z-10 w-full pb-12 overflow-hidden mt-12">
-        <div className="animate-infinite-scroll flex items-center gap-24 whitespace-nowrap">
-          {[...PARTNERS, ...PARTNERS].map((partner, idx) => (
-            <span key={idx} className="text-white font-display font-[800] text-3xl tracking-tighter uppercase opacity-80 hover:opacity-100 transition-opacity cursor-default">
-              {partner}
-            </span>
-          ))}
+      <div className="relative z-10 w-full pb-12 overflow-hidden mt-12 [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+        <div className="animate-infinite-scroll flex items-center gap-16 md:gap-24 whitespace-nowrap px-8">
+          {[...PARTNERS, ...PARTNERS].map((partner, idx) => {
+            const isPriority = partner.name === "SOFTPLAN" || partner.name === "META IT";
+            return (
+              <img
+                key={idx}
+                src={partner.logo}
+                alt={partner.name}
+                className={`${isPriority ? 'h-10 md:h-16' : 'h-7 md:h-10'} w-auto opacity-50 hover:opacity-100 transition-all duration-500 filter brightness-0 invert flex-shrink-0`}
+              />
+            );
+          })}
         </div>
       </div>
     </section>
