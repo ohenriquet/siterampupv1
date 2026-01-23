@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { IMAGES } from './constants';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Challenge from './components/Challenge';
@@ -10,6 +11,16 @@ import Pricing from './components/Pricing';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
+  const [bgLoaded, setBgLoaded] = React.useState(false);
+
+  React.useEffect(() => {
+    const img = new Image();
+    img.src = IMAGES.HERO_BG;
+    img.onload = () => {
+      setBgLoaded(true);
+    };
+  }, []);
+
   React.useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -26,15 +37,28 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-white relative">
       {/* Hero and Background Wrapper */}
-      <div className="relative w-full">
+      <div className="relative w-full overflow-hidden bg-gray-900">
         <div className="absolute inset-0 z-0 h-full pointer-events-none">
+          {/* Low Res Placeholder (Immediate Load) */}
+          <img
+            alt="Road to Success Placeholder"
+            className="absolute inset-0 w-full h-full object-cover object-top scale-100 origin-top filter blur-sm transition-opacity duration-1000"
+            src={IMAGES.HERO_BG_LOW}
+            loading="eager"
+            decoding="sync"
+          />
+
+          {/* High Res Image (Fade in when loaded) */}
           <img
             alt="Road to Success"
-            className="w-full h-full object-cover object-[center_35%]"
-            src="/hero-bg.jpg"
+            className={`absolute inset-0 w-full h-full object-cover object-top scale-100 origin-top transition-opacity duration-1000 ${bgLoaded ? 'opacity-100' : 'opacity-0'}`}
+            src={IMAGES.HERO_BG}
           />
+          {/* Sunny Effect (Sunlight from Right) */}
+          <div className="absolute -top-[20%] -right-[10%] w-[80%] h-[100%] bg-gradient-to-bl from-orange-200/40 via-yellow-100/20 to-transparent blur-[80px] opacity-70 mix-blend-overlay"></div>
+
           {/* Subtle Glow for Hero Section */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[800px] bg-primary/20 blur-[120px] rounded-full opacity-50"></div>
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1200px] h-[800px] bg-primary/10 blur-[120px] rounded-full opacity-40"></div>
           <div className="absolute inset-0 hero-gradient"></div>
         </div>
 

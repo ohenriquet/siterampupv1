@@ -1,20 +1,38 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Site Eva Ramp-up
 
-# Run and deploy your AI Studio app
+Uma landing page de alta conversão para a Eva, focada em onboarding e produtividade com Buddy System. O projeto utiliza um design moderno com glassmorphism e animações fluidas.
 
-This contains everything you need to run your app locally.
+## Tecnologias
 
-View your app in AI Studio: https://ai.studio/apps/drive/1CwbWjsTXLvm0ESLmjf4VoJEHwbkX05Q-
+- **React** (Vite)
+- **TypeScript**
+- **Tailwind CSS**
+- **Framer Motion** (ou animações CSS puras)
 
-## Run Locally
+## Como rodar localmente
 
-**Prerequisites:**  Node.js
+1. Instale as dependências:
+   ```bash
+   npm install
+   ```
 
+2. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+3. Acesse via `http://localhost:5173` (ou a porta indicada no terminal).
+
+## Build e Deploy
+
+Para gerar a versão de produção:
+
+```bash
+npm run build
+```
+
+O deploy está configurado para o GitHub Pages:
+
+```bash
+npm run deploy
+```
