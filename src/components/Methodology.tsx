@@ -99,7 +99,7 @@ const Methodology: React.FC = () => {
                 </div>
 
                 <p className="text-gray-400 text-[11px] font-medium mb-6 text-center lg:text-left italic">
-                  “Times com cadência e clareza executam melhor”. <a href="https://hbr.org/2020/05/why-some-teams-are-smarter-than-others" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">HBR</a>
+                  Onboarding consistente reduz improviso e acelera execução. <a href="https://hbr.org/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">HBR</a>
                 </p>
 
                 {/* Integrations Block */}
@@ -185,7 +185,7 @@ const Methodology: React.FC = () => {
               ))}
             </div>
             <p className="mt-12 text-gray-400 text-sm font-medium">
-              Processos e coaching melhoram desempenho em até 22%. <a href="https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-organization-blog/performance-management-and-the-post-covid-19-world" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">McKinsey</a>
+              Rituais de acompanhamento e coaching melhoram desempenho em até 22%. <a href="https://www.mckinsey.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">McKinsey</a>
             </p>
           </div>
         </div>

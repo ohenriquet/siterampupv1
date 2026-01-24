@@ -32,7 +32,7 @@ const Challenge: React.FC = () => {
             </div>
           </div>
           <p className="mt-12 text-gray-400 text-sm font-medium">
-            Produtividade sobe até 40% com uso de IA no trabalho. <a href="https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part" target="_blank" rel="noopener noreferrer" className="underline hover:text-white transition-colors">Microsoft</a>
+            Com buddy no onboarding, 56% dizem que ficaram produtivos mais rápido. Pode chegar a 97% com mais encontros. <a href="https://www.microsoft.com/en-us/worklab/strategies-for-onboarding-in-a-hybrid-world" target="_blank" rel="noopener noreferrer" className="underline hover:text-white transition-colors">Microsoft WorkLab</a>
           </p>
         </div>
       </section>
