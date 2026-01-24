@@ -11,16 +11,6 @@ import Pricing from './components/Pricing';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
-  const [bgLoaded, setBgLoaded] = React.useState(false);
-
-  React.useEffect(() => {
-    const img = new Image();
-    img.src = IMAGES.HERO_BG;
-    img.onload = () => {
-      setBgLoaded(true);
-    };
-  }, []);
-
   React.useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -48,10 +38,10 @@ const App: React.FC = () => {
             decoding="sync"
           />
 
-          {/* High Res Image (Fade in when loaded) */}
+          {/* High Res Image (Priority) */}
           <img
             alt="Road to Success"
-            className={`absolute inset-0 w-full h-full object-cover object-top scale-100 origin-top transition-opacity duration-1000 ${bgLoaded ? 'opacity-100' : 'opacity-0'}`}
+            className="absolute inset-0 w-full h-full object-cover object-top scale-100 origin-top opacity-100"
             src={IMAGES.HERO_BG}
             fetchPriority="high"
           />

@@ -3,6 +3,8 @@ import React from 'react';
 import { IMAGES } from '../constants';
 
 const Clients: React.FC = () => {
+  const [playVideo, setPlayVideo] = React.useState(false);
+
   return (
     <section className="py-24 bg-white border-t border-gray-100" id="quem-atendemos">
       <div className="max-w-6xl mx-auto px-6">
@@ -58,13 +60,32 @@ const Clients: React.FC = () => {
           </div>
           <div className="relative">
             <div className="aspect-video rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(74,48,228,0.2)] bg-black group cursor-pointer relative">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/PpzP5RmgKEk?si=1PToL7Z6l6N-l7mJ"
-                title="Case Meta: Experiência Eva"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
+              {/* Video Facade */}
+              {!playVideo ? (
+                <div
+                  className="w-full h-full bg-slate-900 flex items-center justify-center cursor-pointer group relative overflow-hidden"
+                  onClick={() => setPlayVideo(true)}
+                >
+                  <img
+                    src="https://img.youtube.com/vi/PpzP5RmgKEk/maxresdefault.jpg"
+                    alt="Capa do vídeo Case Meta"
+                    className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                  <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center z-10 border border-white/20 group-hover:scale-110 transition-transform">
+                    <span className="material-symbols-outlined text-white text-4xl fill-current">play_arrow</span>
+                  </div>
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                </div>
+              ) : (
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/PpzP5RmgKEk?si=1PToL7Z6l6N-l7mJ&autoplay=1"
+                  title="Case Meta: Experiência Eva"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              )}
             </div>
             {/* Tag Overlay */}
             <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl hidden md:block border border-gray-100">

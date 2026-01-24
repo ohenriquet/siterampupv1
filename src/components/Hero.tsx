@@ -72,6 +72,9 @@ const Hero: React.FC = () => {
                 key={idx}
                 src={partner.logo}
                 alt={partner.name}
+                width="200"
+                height="100"
+                loading="lazy"
                 className={`${isPriorityLogo ? 'h-24 md:h-[160px]' : 'h-20 md:h-[125px]'} w-auto opacity-50 hover:opacity-100 transition-all duration-500 filter brightness-0 invert flex-shrink-0`}
               />
             );
