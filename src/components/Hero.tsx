@@ -13,17 +13,17 @@ const Hero: React.FC = () => {
         <div className="ultra-glass-panel w-full max-w-[700px] rounded-[32px] p-4 md:py-14 md:px-6 text-center relative">
           <div className="inline-flex items-center px-4 py-1.5 liquid-glass mb-6 mx-auto text-center">
             <span className="text-[10px] font-semibold tracking-[0.1em] text-white leading-relaxed">
-              Só 12% dizem que a empresa faz um ótimo onboarding. <a href="https://www.gallup.com/workplace/235121/why-onboarding-experience-key-retention.aspx" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/80 transition-colors">Gallup</a>
+              Equipes híbridas e remotas
             </span>
           </div>
 
           <h1 className="font-display tracking-tight text-white mb-4">
-            <span className="block text-[30px] md:text-[45px] leading-[1.05] font-[800]">Equipes mais produtivas</span>
-            <span className="block text-[30px] md:text-[45px] leading-[1.05] font-[800]">com Buddy System</span>
+            <span className="block text-[30px] md:text-[45px] leading-[1.05] font-[800]">Acelere a produtividade:</span>
+            <span className="block text-[30px] md:text-[45px] leading-[1.05] font-[800]">Apadrinhamento humano com IA</span>
           </h1>
 
           <h2 className="text-white/90 text-[10px] md:text-[11px] font-medium max-w-[560px] mx-auto leading-relaxed mb-7">
-            A Eva combina templates de workflow por área, checkpoints bidirecionais 30/60/90 e buddy system automatizado para acelerar a evolução de cada novo integrante.
+            Usando IA para automatizar o buddy system com workflows por área e checkpoints 30/60/90, reduzindo improviso e acelerando a evolução de cada integrante.
           </h2>
 
           <div className="flex flex-wrap justify-center gap-3 mb-7">
