@@ -31,7 +31,7 @@ const Methodology: React.FC = () => {
           <div className="flex flex-col items-center">
             <div className="flex flex-col items-center mb-16 text-center wind-trail">
               <span className="font-display font-[900] text-[120px] md:text-[180px] leading-none text-primary/10 mb-[-20px] md:mb-[-40px]">1</span>
-              <img src="/traffic/red.png" alt="Traffic Light Red" className="h-[144px] w-auto mb-6 relative z-10" />
+              <img src="/traffic/red.png" alt="Traffic Light Red" className="h-[144px] w-auto mb-6 relative z-10" loading="lazy" />
               <h3 className="font-display font-[800] text-3xl md:text-5xl text-[#1A1A1A]">Setup da Eva</h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
@@ -70,6 +70,7 @@ const Methodology: React.FC = () => {
                 src="/workflow-eva.gif"
                 alt="Workflow Eva Animation"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
           </div>
@@ -78,7 +79,7 @@ const Methodology: React.FC = () => {
           <div className="flex flex-col items-center">
             <div className="flex flex-col items-center mb-16 text-center wind-trail">
               <span className="font-display font-[900] text-[120px] md:text-[180px] leading-none text-primary/10 mb-[-20px] md:mb-[-40px]">2</span>
-              <img src="/traffic/yellow.png" alt="Traffic Light Yellow" className="h-[144px] w-auto mb-6 relative z-10" />
+              <img src="/traffic/yellow.png" alt="Traffic Light Yellow" className="h-[144px] w-auto mb-6 relative z-10" loading="lazy" />
               <h3 className="font-display font-[800] text-3xl md:text-5xl text-[#1A1A1A]">Buddy system automatizado</h3>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
@@ -106,7 +107,7 @@ const Methodology: React.FC = () => {
                   <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4 text-center lg:text-left">Integrações nativas</p>
                   <div className="flex flex-wrap justify-center lg:justify-start gap-5 opacity-80">
                     {integrations.map((tool, idx) => (
-                      <img key={idx} src={tool.icon} alt={tool.name} className="h-5 w-auto" />
+                      <img key={idx} src={tool.icon} alt={tool.name} className="h-5 w-auto" loading="lazy" />
                     ))}
                   </div>
                 </div>
@@ -153,7 +154,7 @@ const Methodology: React.FC = () => {
           <div className="flex flex-col items-center">
             <div className="flex flex-col items-center mb-16 text-center wind-trail">
               <span className="font-display font-[900] text-[120px] md:text-[180px] leading-none text-primary/10 mb-[-20px] md:mb-[-40px]">3</span>
-              <img src="/traffic/green.png" alt="Traffic Light Green" className="h-[144px] w-auto mb-6 relative z-10" />
+              <img src="/traffic/green.png" alt="Traffic Light Green" className="h-[144px] w-auto mb-6 relative z-10" loading="lazy" />
               <h3 className="font-display font-[800] text-3xl md:text-5xl text-[#1A1A1A]">Ready to Work</h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">

@@ -53,6 +53,7 @@ const App: React.FC = () => {
             alt="Road to Success"
             className={`absolute inset-0 w-full h-full object-cover object-top scale-100 origin-top transition-opacity duration-1000 ${bgLoaded ? 'opacity-100' : 'opacity-0'}`}
             src={IMAGES.HERO_BG}
+            fetchPriority="high"
           />
           {/* Sunny Effect (Sunlight from Right) */}
           <div className="absolute -top-[20%] -right-[10%] w-[80%] h-[100%] bg-gradient-to-bl from-orange-200/40 via-yellow-100/20 to-transparent blur-[80px] opacity-70 mix-blend-overlay"></div>
