@@ -1,7 +1,9 @@
 
 import React, { useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Pricing: React.FC = () => {
+  const { t } = useLanguage();
   const [teamHires, setTeamHires] = useState(20);
   const [companyHires, setCompanyHires] = useState(100);
 
@@ -18,43 +20,43 @@ const Pricing: React.FC = () => {
   const plans = [
     {
       badge: null,
-      title: "PARA EQUIPES",
-      description: "Focado em verticals de alta performance:",
-      subtitle: "Tech, Vendas e Customer Success",
+      title: t.pricing.teamTitle,
+      description: t.pricing.teamDesc,
+      subtitle: t.pricing.teamSub,
       features: [
-        "Trilhas Técnicas Especializadas",
-        "Buddy System Automatizado",
-        "Ramp-up até os primeiros 90 dias"
+        t.pricing.teamFeature1,
+        t.pricing.teamFeature2,
+        t.pricing.teamFeature3
       ],
-      rangeLabel: "CONTRATAÇÕES ANUAIS",
+      rangeLabel: t.pricing.rangeLabel,
       minRange: 20,
       maxRange: 100,
       step: 20,
       currentValue: teamHires,
       setValue: setTeamHires,
       price: calculateTeamPrice(teamHires),
-      ctaText: "SOLICITAR DEMO",
+      ctaText: t.pricing.cta,
       highlight: false
     },
     {
       badge: "***",
-      title: "PARA EMPRESAS",
-      description: "Focado em",
-      subtitle: "Onboarding Organizacional",
-      subtitleHighlight: "e operações em alta escala.",
+      title: t.pricing.companyTitle,
+      description: t.pricing.companyDesc,
+      subtitle: t.pricing.companySub,
+      subtitleHighlight: t.pricing.companySubHighlight,
       features: [
-        "2-3x no onboarding (Contexto, Cultura, Compliance, Carreira)",
-        "Dx em Boarding no onboarding",
-        "Integração com ATS, folha ou LMS"
+        t.pricing.companyFeature1,
+        t.pricing.companyFeature2,
+        t.pricing.companyFeature3
       ],
-      rangeLabel: "CONTRATAÇÕES ANUAIS",
+      rangeLabel: t.pricing.rangeLabel,
       minRange: 100,
       maxRange: 500,
       step: 100,
       currentValue: companyHires,
       setValue: setCompanyHires,
       price: calculateCompanyPrice(companyHires),
-      ctaText: "SOLICITAR DEMO",
+      ctaText: t.pricing.cta,
       highlight: true,
       highlightLabel: ""
     }
@@ -66,10 +68,10 @@ const Pricing: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="font-display text-[32px] md:text-[48px] font-[800] mb-4 text-[#1A1A1A] tracking-tight">
-            PLANOS
+            {t.pricing.title}
           </h2>
           <p className="text-gray-500 text-base font-medium max-w-xl mx-auto">
-            Planos modulares desenhados para a escala e velocidade do seu negócio.
+            {t.pricing.subtitle}
           </p>
         </div>
 
@@ -132,7 +134,7 @@ const Pricing: React.FC = () => {
                     <span className="text-3xl font-[900] text-[#1A1A1A]">
                       {plan.currentValue}
                     </span>
-                    <span className="text-sm text-gray-400 font-medium">/ano</span>
+                    <span className="text-sm text-gray-400 font-medium">{t.pricing.year}</span>
                   </div>
                 </div>
 
@@ -168,7 +170,7 @@ const Pricing: React.FC = () => {
                   <span className="text-4xl md:text-5xl font-[900] text-[#1A1A1A]">
                     {plan.price.toLocaleString('pt-BR')}
                   </span>
-                  <span className="text-xs text-gray-500 font-medium">/mês</span>
+                  <span className="text-xs text-gray-500 font-medium">{t.pricing.month}</span>
                 </div>
                 <button
                   onClick={() => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })}
@@ -187,7 +189,7 @@ const Pricing: React.FC = () => {
 
         {/* Footer Validation */}
         <p className="text-center mt-12 text-gray-400 text-sm font-medium">
-          Ganhos pequenos de produtividade já geram ROI em times grandes.{' '}
+          {t.pricing.footer}{' '}
           <a
             href="https://www.gartner.com/en/human-resources"
             target="_blank"

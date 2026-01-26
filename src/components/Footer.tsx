@@ -1,7 +1,11 @@
 
 import React from 'react';
 
+import { useLanguage } from '../contexts/LanguageContext';
+
 const Footer: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-gradient-to-b from-[#F5F5F5] to-[#EBEBEB] text-[#1A1A1A] pt-20 pb-12 border-t border-white/50">
       <div className="max-w-7xl mx-auto px-6">
@@ -11,7 +15,7 @@ const Footer: React.FC = () => {
 
           {/* Nav Links */}
           <nav className="flex gap-8">
-            {['Empresa', 'Cases', 'Blog', 'Recursos'].map((item) => (
+            {t.footer.nav.map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -74,19 +78,19 @@ const Footer: React.FC = () => {
         {/* Middle Section: Trust Badges */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center border-b border-gray-200/60 pb-16 mb-12">
           <div className="flex flex-col items-center gap-4">
-            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Parte do</span>
+            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">{t.footer.partOf}</span>
             <div className="h-12 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
               <img src="/logos/cubo.png" alt="Cubo" className="h-8 w-auto mix-blend-multiply" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement!.innerHTML = '<span class="text-xl font-bold text-gray-400">cubo</span>'; }} />
             </div>
           </div>
           <div className="flex flex-col items-center gap-4">
-            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Investido por</span>
+            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">{t.footer.investedBy}</span>
             <div className="h-12 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
               <img src="/logos/ace.png" alt="ACE Ventures" className="h-8 w-auto mix-blend-multiply" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement!.innerHTML = '<span class="text-xl font-bold text-gray-400">ACE</span>'; }} />
             </div>
           </div>
           <div className="flex flex-col items-center gap-4">
-            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Reconhecido por</span>
+            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">{t.footer.recognizedBy}</span>
             <div className="h-12 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
               <img src="/logos/top10.png" alt="Top 10 HR Techs" className="h-10 w-auto mix-blend-multiply" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement!.innerHTML = '<span class="text-xl font-bold text-gray-400">TOP 10 HRTechs</span>'; }} />
             </div>
@@ -96,12 +100,12 @@ const Footer: React.FC = () => {
         {/* Bottom Section: Address & Copyright */}
         <div className="text-center space-y-4">
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-[11px] text-gray-400 font-medium">
-            <span>Eva People © 2025. Todos os direitos reservados</span>
+            <span>{t.footer.rights}</span>
             <span className="hidden md:block">|</span>
-            <a href="#" className="hover:text-[#4A30E4] transition-colors">Política de Privacidade</a>
+            <a href="#" className="hover:text-[#4A30E4] transition-colors">{t.footer.privacy}</a>
           </div>
           <p className="text-[10px] text-gray-300 font-medium uppercase tracking-wider max-w-2xl mx-auto leading-relaxed">
-            Cubo Itaú®, Alameda Vicente Pinzon, 54 – 12º andar – Vila Olímpia, São Paulo – SP, 04547-130
+            {t.footer.address}
           </p>
         </div>
 

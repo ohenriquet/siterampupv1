@@ -3,7 +3,10 @@ import React from 'react';
 import { IMAGES, PARTNERS } from '../constants';
 import Header from './Header';
 
+import { useLanguage } from '../contexts/LanguageContext';
+
 const Hero: React.FC = () => {
+  const { t, language, setLanguage } = useLanguage();
   const [email, setEmail] = React.useState('');
   const [status, setStatus] = React.useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
@@ -51,31 +54,58 @@ const Hero: React.FC = () => {
 
       <Header />
 
+      {/* Language Selector */}
+      <div className="relative z-50 flex items-center justify-center gap-3 mt-4 text-[10px] font-bold tracking-widest text-white/40">
+        <button
+          onClick={() => setLanguage('EN')}
+          className={`${language === 'EN' ? 'text-white' : 'hover:text-white transition-colors cursor-pointer'}`}
+        >
+          EN
+        </button>
+        <span className="opacity-30">|</span>
+        <button
+          onClick={() => setLanguage('PT')}
+          className={`${language === 'PT' ? 'text-white' : 'hover:text-white transition-colors cursor-pointer'}`}
+        >
+          PT
+        </button>
+        <span className="opacity-30">|</span>
+        <button
+          onClick={() => setLanguage('ES')}
+          className={`${language === 'ES' ? 'text-white' : 'hover:text-white transition-colors cursor-pointer'}`}
+        >
+          ES
+        </button>
+      </div>
+
       <main className="relative z-10 w-full px-6 mt-6 flex flex-col items-center justify-center flex-1">
         <div className="ultra-glass-panel w-full max-w-[700px] rounded-[32px] p-6 md:py-12 md:px-8 text-center relative">
           <div className="inline-flex items-center px-4 py-1.5 liquid-glass mb-5 mx-auto text-center">
             <span className="text-[10px] font-semibold tracking-[0.1em] text-white leading-relaxed">
-              IA para People Ops
+              {t.hero.kicker}
             </span>
           </div>
 
-          <h1 className="font-display tracking-tight text-white mb-5">
-            <span className="block text-[30px] md:text-[45px] leading-[1.05] font-[800]">Acelere a produtividade:</span>
-            <span className="block text-[30px] md:text-[45px] leading-[1.05] font-[800]">Apadrinhamento humano com IA</span>
+          <h1 className="font-display tracking-tight text-white mb-5 flex flex-col items-center">
+            <span className="block text-[45px] md:text-[72px] leading-[1] font-[800] mb-2 uppercase tracking-tight">{t.hero.title}</span>
+            <div className="flex items-center gap-4 text-[24px] md:text-[36px] font-medium opacity-90">
+              <span>{t.hero.with}</span>
+              <img src="/logo eva principal.png" alt="Eva Logo" className="h-[28px] md:h-[42px] mt-1" />
+            </div>
           </h1>
 
           <div className="flex flex-wrap justify-center gap-3 mb-6">
             <div className="liquid-glass px-4 py-2 flex items-center gap-3">
-              <span className="material-symbols-outlined text-white/40 text-lg">traffic</span>
-              <span className="text-[9px] md:text-[10px] font-bold text-white uppercase tracking-wider">Templates de workflow por área</span>
+              <span className="material-symbols-outlined text-white/40 text-lg">computer</span>
+              <span className="text-[9px] md:text-[10px] font-bold text-white uppercase tracking-wider">{t.hero.box1}</span>
             </div>
             <div className="liquid-glass px-4 py-2 flex items-center gap-3">
-              <span className="material-symbols-outlined text-white/40 text-lg">traffic</span>
-              <span className="text-[9px] md:text-[10px] font-bold text-white uppercase tracking-wider">Checkpoints bidirecionais 30/60/90</span>
+              <span className="material-symbols-outlined text-white/40 text-lg">group</span>
+              <span className="text-[9px] md:text-[10px] font-bold text-white uppercase tracking-wider">{t.hero.box2}</span>
             </div>
             <div className="liquid-glass px-4 py-2 flex items-center gap-3">
-              <span className="material-symbols-outlined text-white/40 text-lg">traffic</span>
-              <span className="text-[9px] md:text-[10px] font-bold text-white uppercase tracking-wider">Buddy system automatizado</span>
+              <span className="material-symbols-outlined text-white/40 text-lg">smart_toy</span>
+              <span className="text-[9px] md:text-[10px] font-bold text-white uppercase tracking-wider">{t.hero.box3}</span>
             </div>
           </div>
 
@@ -83,7 +113,7 @@ const Hero: React.FC = () => {
             <form className="w-full liquid-glass p-1.5 flex items-center shadow-xl" onSubmit={handleSubmit}>
               <input
                 className="flex-1 bg-transparent border-none focus:ring-0 px-4 text-xs font-semibold text-white placeholder:text-white/60 focus:outline-none"
-                placeholder="Seu e-mail corporativo"
+                placeholder={t.hero.emailPlaceholder}
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -96,7 +126,7 @@ const Hero: React.FC = () => {
                 disabled={status === 'submitting' || status === 'success'}
               >
                 <span className="text-xs font-semibold uppercase tracking-tight">
-                  {status === 'submitting' ? 'Enviando...' : status === 'success' ? 'Recebido!' : 'solicitar'}
+                  {status === 'submitting' ? t.hero.sending : status === 'success' ? t.hero.success : t.hero.ctaButton}
                 </span>
                 <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">
                   <span className={`material-symbols-outlined text-white text-md ${status === 'idle' ? 'group-hover:translate-x-0.5' : ''} transition-transform`}>
@@ -107,7 +137,7 @@ const Hero: React.FC = () => {
             </form>
             {status === 'error' && (
               <p className="absolute -bottom-8 left-0 w-full text-center text-red-400 text-[10px] font-medium">
-                Ocorreu um erro. Tente novamente.
+                {t.hero.error}
               </p>
             )}
           </div>

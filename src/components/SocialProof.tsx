@@ -2,25 +2,29 @@
 import React from 'react';
 import { TESTIMONIALS } from '../constants';
 
+import { useLanguage } from '../contexts/LanguageContext';
+
 const SocialProof: React.FC = () => {
+  const { t } = useLanguage();
+
   const cases = [
     {
       name: "Nathália Tupinambá",
       role: "Diretora de Pessoas, Cultura e ESG",
-      quote: "Eva nos auxiliou bastante a manter nosso padrão de qualidade, mas de uma maneira mais eficiente. Recomendo, principalmente, para empresas que lidam com grande volume de onboarding ou que desejam trazer mais personalização ao colaborador.",
-      highlight: "para empresas que lidam com grande volume de onboarding",
+      quote: t.socialProof.case1Quote,
+      highlight: t.socialProof.case1Highlight,
       logo: "/cases/lwsa_case.png", // LWSA Official Logo
-      buttonText: "Case LWSA",
+      buttonText: t.socialProof.case1Button,
       link: "https://evapeople.com.br/wp-content/uploads/2025/06/Case_LWSA_202506.pdf",
       avatar: "/cases/nathalia.jpg"
     },
     {
       name: "Lilian Ghirotto",
       role: "Coordenadora de DHO",
-      quote: "A redução de micro tarefas é o mais impactante da ferramenta. No nosso dia a dia, é significativo o quanto temos muito e nos ajuda a aliviar tempo de outras pessoas. Por aqui brincamos até que Eva é funcionária do RH 😊",
-      highlight: "redução de micro tarefas",
+      quote: t.socialProof.case2Quote,
+      highlight: t.socialProof.case2Highlight,
       logo: "/cases/elettromec_case.png", // Elettromec Official Logo
-      buttonText: "Case Elettromec",
+      buttonText: t.socialProof.case2Button,
       link: "https://evapeople.com.br/wp-content/uploads/2025/06/Case_Elettromec_202506.pdf",
       avatar: "/cases/lilian.jpg"
     }
@@ -30,8 +34,8 @@ const SocialProof: React.FC = () => {
     <section className="py-24 bg-[#F9FAFB] overflow-hidden border-t border-gray-100" id="quem-somos-prova">
       <div className="max-w-6xl mx-auto px-6">
         <div className="mb-20 text-center">
-          <span className="font-semibold tracking-[0.2em] text-[12px] uppercase mb-4 block text-[#4A30E4]">Cases de Sucesso</span>
-          <h2 className="font-display text-[32px] md:text-[56px] font-[800] text-[#1A1A1A] tracking-tight">Depoimentos e cases</h2>
+          <span className="font-semibold tracking-[0.2em] text-[12px] uppercase mb-4 block text-[#4A30E4]">{t.socialProof.label}</span>
+          <h2 className="font-display text-[32px] md:text-[56px] font-[800] text-[#1A1A1A] tracking-tight">{t.socialProof.title}</h2>
         </div>
 
         <div className="space-y-10">

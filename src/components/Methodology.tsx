@@ -1,7 +1,12 @@
 
 import React from 'react';
+import { IMAGES } from '../constants';
+import Reveal from './Reveal';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Methodology: React.FC = () => {
+  const { t } = useLanguage();
+
   const steps_1 = [
     { title: "Ingestão de Dados", icon: "dataset", tag: "Contexto" },
     { title: "Config de Trilhas", icon: "settings_input_component", tag: "Setup" },
@@ -23,32 +28,32 @@ const Methodology: React.FC = () => {
     <section className="py-32 bg-[#F5F5F5] relative z-20" id="como-funciona">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-28">
-          <h2 className="font-display text-[32px] md:text-[56px] font-[800] text-[#1A1A1A] tracking-tight">Como funciona</h2>
+          <h2 className="font-display text-[32px] md:text-[56px] font-[800] text-[#1A1A1A] tracking-tight">{t.methodology.title}</h2>
         </div>
 
         <div className="space-y-40">
           {/* Step 1 */}
           <div className="flex flex-col items-center">
-            <div className="flex flex-col items-center mb-16 text-center wind-trail">
+            <Reveal className="flex flex-col items-center mb-16 text-center wind-trail">
               <span className="font-display font-[900] text-[120px] md:text-[180px] leading-none text-primary/10 mb-[-20px] md:mb-[-40px]">1</span>
               <img src="/traffic/red.png" alt="Traffic Light Red" className="h-[144px] w-auto mb-6 relative z-10" loading="lazy" />
-              <h3 className="font-display font-[800] text-3xl md:text-5xl text-[#1A1A1A]">Ensinamos a Eva sobre seu negócio</h3>
-            </div>
+              <h3 className="font-display font-[800] text-3xl md:text-5xl text-[#1A1A1A]">{t.methodology.step1Title}</h3>
+            </Reveal>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
               {[
                 {
-                  title: "Templates validados",
-                  desc: "Tech, Sales e CS prontos para rodar.\nComece com workflows validados e ajuste ao seu contexto.",
+                  title: t.methodology.step1Card1Title,
+                  desc: t.methodology.step1Card1Desc,
                   icon: "dataset"
                 },
                 {
-                  title: "Customização de templates",
-                  desc: "Ajuste blocos, conteúdos e links em minutos.\nCrie variações por área sem depender do time técnico.",
+                  title: t.methodology.step1Card2Title,
+                  desc: t.methodology.step1Card2Desc,
                   icon: "settings_input_component"
                 },
                 {
-                  title: "IA treinada no seu contexto",
-                  desc: "A Eva aprende com suas rotinas, termos e padrões.\nMenos improviso no onboarding e mais consistência na execução.",
+                  title: t.methodology.step1Card3Title,
+                  desc: t.methodology.step1Card3Desc,
                   icon: "verified_user"
                 }
               ].map((step, idx) => (
@@ -64,32 +69,33 @@ const Methodology: React.FC = () => {
           </div>
 
           {/* Workflow GIF */}
-          <div className="w-full max-w-5xl mx-auto motion-in wind-trail">
+          {/* Workflow GIF */}
+          <Reveal className="w-full max-w-5xl mx-auto motion-in wind-trail">
             <div className="frosted-glass-card w-full aspect-video bg-white shadow-2xl border-white/40 flex items-center justify-center overflow-hidden">
               <img
-                src="/workflow-eva.gif"
+                src={IMAGES.WORKFLOW_GIF}
                 alt="Workflow Eva Animation"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
             </div>
-          </div>
+          </Reveal>
 
           {/* Step 2 */}
           <div className="flex flex-col items-center">
-            <div className="flex flex-col items-center mb-16 text-center wind-trail">
+            <Reveal className="flex flex-col items-center mb-16 text-center wind-trail">
               <span className="font-display font-[900] text-[120px] md:text-[180px] leading-none text-primary/10 mb-[-20px] md:mb-[-40px]">2</span>
               <img src="/traffic/yellow.png" alt="Traffic Light Yellow" className="h-[144px] w-auto mb-6 relative z-10" loading="lazy" />
-              <h3 className="font-display font-[800] text-3xl md:text-5xl text-[#1A1A1A]">Buddy system automatizado</h3>
-            </div>
+              <h3 className="font-display font-[800] text-3xl md:text-5xl text-[#1A1A1A]">{t.methodology.step2Title}</h3>
+            </Reveal>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
               <div className="frosted-glass-card p-10 bg-white/50 border-white/60">
-                <h4 className="font-display text-2xl font-[800] mb-6 text-[#1A1A1A] leading-tight text-center lg:text-left">Gestão e Cadência Automatizada</h4>
+                <h4 className="font-display text-2xl font-[800] mb-6 text-[#1A1A1A] leading-tight text-center lg:text-left">{t.methodology.step2CardTitle}</h4>
                 <div className="space-y-4 mb-8">
                   {[
-                    "Acompanhamento estruturado de progresso por fase",
-                    "Validações e coleta estruturada de sinais com colaborador e buddy",
-                    "Nudges e lembretes automáticos para manter cadência"
+                    t.methodology.step2Bullet1,
+                    t.methodology.step2Bullet2,
+                    t.methodology.step2Bullet3
                   ].map((bullet, i) => (
                     <div key={i} className="flex gap-3 items-center">
                       <span className="material-symbols-outlined text-primary text-sm">check_circle</span>
@@ -99,12 +105,12 @@ const Methodology: React.FC = () => {
                 </div>
 
                 <p className="text-gray-400 text-[11px] font-medium mb-6 text-center lg:text-left italic">
-                  Onboarding consistente reduz improviso e acelera execução. <a href="https://hbr.org/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">HBR</a>
+                  {t.methodology.step2Footer} <a href="https://hbr.org/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">HBR</a>
                 </p>
 
                 {/* Integrations Block */}
                 <div className="pt-6 border-t border-gray-100">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4 text-center lg:text-left">Integrações nativas</p>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4 text-center lg:text-left">{t.methodology.integrations}</p>
                   <div className="flex flex-wrap justify-center lg:justify-start gap-5 opacity-80">
                     {integrations.map((tool, idx) => (
                       <img key={idx} src={tool.icon} alt={tool.name} className="h-5 w-auto" loading="lazy" />
@@ -118,7 +124,7 @@ const Methodology: React.FC = () => {
                 <div className="frosted-glass-card p-4 bg-white shadow-xl translate-x-4">
                   <div className="flex items-center gap-3 mb-2 p-2 bg-gray-50 rounded-lg">
                     <img src="/logos/tools/slack.png" className="h-4 w-4" alt="Slack" />
-                    <span className="text-xs font-bold text-gray-700">Eva Buddy no Slack</span>
+                    <span className="text-xs font-bold text-gray-700">{t.methodology.slackMockup}</span>
                   </div>
                   <div className="px-2">
                     <div className="h-2 bg-gray-100 rounded w-5/6 mb-2"></div>
@@ -129,7 +135,7 @@ const Methodology: React.FC = () => {
                 <div className="frosted-glass-card p-4 bg-white shadow-xl -translate-x-4">
                   <div className="flex items-center gap-3 mb-2 p-2 bg-[#E7FFDB] rounded-lg">
                     <img src="/logos/tools/whatsapp.png" className="h-4 w-4" alt="WhatsApp" />
-                    <span className="text-xs font-bold text-gray-700">Eva Buddy no WhatsApp</span>
+                    <span className="text-xs font-bold text-gray-700">{t.methodology.whatsappMockup}</span>
                   </div>
                   <div className="px-2">
                     <div className="h-2 bg-gray-100 rounded w-3/4 mb-2"></div>
@@ -140,7 +146,7 @@ const Methodology: React.FC = () => {
                 <div className="frosted-glass-card p-4 bg-white shadow-xl translate-x-2">
                   <div className="flex items-center gap-3 mb-2 p-2 bg-[#F3F2F1] rounded-lg">
                     <img src="/logos/tools/teams.png" className="h-4 w-4" alt="Teams" />
-                    <span className="text-xs font-bold text-gray-700">Eva Buddy no Teams</span>
+                    <span className="text-xs font-bold text-gray-700">{t.methodology.teamsMockup}</span>
                   </div>
                   <div className="px-2">
                     <div className="h-2 bg-gray-100 rounded w-4/5 mb-2"></div>
@@ -152,26 +158,26 @@ const Methodology: React.FC = () => {
           </div>
 
           <div className="flex flex-col items-center">
-            <div className="flex flex-col items-center mb-16 text-center wind-trail">
+            <Reveal className="flex flex-col items-center mb-16 text-center wind-trail">
               <span className="font-display font-[900] text-[120px] md:text-[180px] leading-none text-primary/10 mb-[-20px] md:mb-[-40px]">3</span>
               <img src="/traffic/green.png" alt="Traffic Light Green" className="h-[144px] w-auto mb-6 relative z-10" loading="lazy" />
-              <h3 className="font-display font-[800] text-3xl md:text-5xl text-[#1A1A1A]">Ready to Work</h3>
-            </div>
+              <h3 className="font-display font-[800] text-3xl md:text-5xl text-[#1A1A1A]">{t.methodology.step3Title}</h3>
+            </Reveal>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
               {[
                 {
-                  title: "Acompanhamento 30/60/90",
-                  desc: "Status e pontos de atenção por pessoa, com foco em destravar o dia a dia e manter ritmo.",
+                  title: t.methodology.step3Card1Title,
+                  desc: t.methodology.step3Card1Desc,
                   icon: "visibility"
                 },
                 {
-                  title: "Plano de ação com dono e prazo",
-                  desc: "Ações por fase com responsável e prazo para antecipar autonomia e reduzir ramp-up.",
+                  title: t.methodology.step3Card2Title,
+                  desc: t.methodology.step3Card2Desc,
                   icon: "event_available"
                 },
                 {
-                  title: "Apoio humano do time",
-                  desc: "Suporte prático para acelerar o aprendizado no trabalho. Meta de reduzir em até 50% o tempo para autonomia com checkpoints 30/60/90 e rotina de validação.",
+                  title: t.methodology.step3Card3Title,
+                  desc: t.methodology.step3Card3Desc,
                   icon: "psychology"
                 }
               ].map((card, idx) => (
@@ -185,7 +191,7 @@ const Methodology: React.FC = () => {
               ))}
             </div>
             <p className="mt-12 text-gray-400 text-sm font-medium">
-              Rituais de acompanhamento e coaching melhoram desempenho em até 22%. <a href="https://www.mckinsey.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">McKinsey</a>
+              {t.methodology.step3Footer} <a href="https://www.mckinsey.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">McKinsey</a>
             </p>
           </div>
         </div>

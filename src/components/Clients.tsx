@@ -2,16 +2,19 @@
 import React from 'react';
 import { IMAGES } from '../constants';
 
+import { useLanguage } from '../contexts/LanguageContext';
+
 const Clients: React.FC = () => {
+  const { t } = useLanguage();
   const [playVideo, setPlayVideo] = React.useState(false);
 
   return (
     <section className="py-24 bg-white border-t border-gray-100" id="quem-atendemos">
       <div className="max-w-6xl mx-auto px-6">
         <div className="mb-16 text-center">
-          <h2 className="font-display text-[40px] md:text-[64px] font-[800] text-[#1A1A1A] mb-4 tracking-tight">Para times híbridos e remotos</h2>
+          <h2 className="font-display text-[40px] md:text-[64px] font-[800] text-[#1A1A1A] mb-4 tracking-tight">{t.clients.title}</h2>
           <p className="text-gray-500 font-semibold text-lg max-w-3xl mx-auto">
-            Focamos nos departamentos que aceleram a operação. Atendemos empresas em rápido crescimento que fazem mais de 100 contratações por ano.
+            {t.clients.subtitle}
           </p>
         </div>
 
@@ -19,22 +22,22 @@ const Clients: React.FC = () => {
           <div className="frosted-glass-card p-10 flex flex-col items-center justify-center gap-5 text-center bg-muted/30">
             <span className="material-symbols-outlined text-[#4A30E4] text-4xl">terminal</span>
             <div className="space-y-1">
-              <span className="text-sm font-display font-bold text-[#1A1A1A] uppercase tracking-widest block">Tech & Engineering</span>
-              <span className="text-[10px] text-gray-500 font-bold uppercase">Ramp-up técnico e arquitetura</span>
+              <span className="text-sm font-display font-bold text-[#1A1A1A] uppercase tracking-widest block">{t.clients.card1Title}</span>
+              <span className="text-[10px] text-gray-500 font-bold uppercase">{t.clients.card1Desc}</span>
             </div>
           </div>
           <div className="frosted-glass-card p-10 flex flex-col items-center justify-center gap-5 text-center bg-muted/30">
             <span className="material-symbols-outlined text-[#4A30E4] text-4xl">trending_up</span>
             <div className="space-y-1">
-              <span className="text-sm font-display font-bold text-[#1A1A1A] uppercase tracking-widest block">Sales & Revenue</span>
-              <span className="text-[10px] text-gray-500 font-bold uppercase">Playbooks e negociação</span>
+              <span className="text-sm font-display font-bold text-[#1A1A1A] uppercase tracking-widest block">{t.clients.card2Title}</span>
+              <span className="text-[10px] text-gray-500 font-bold uppercase">{t.clients.card2Desc}</span>
             </div>
           </div>
           <div className="frosted-glass-card p-10 flex flex-col items-center justify-center gap-5 text-center bg-muted/30">
             <span className="material-symbols-outlined text-[#4A30E4] text-4xl">support_agent</span>
             <div className="space-y-1">
-              <span className="text-sm font-display font-bold text-[#1A1A1A] uppercase tracking-widest block">Customer Success</span>
-              <span className="text-[10px] text-gray-500 font-bold uppercase">Jornada e satisfação</span>
+              <span className="text-sm font-display font-bold text-[#1A1A1A] uppercase tracking-widest block">{t.clients.card3Title}</span>
+              <span className="text-[10px] text-gray-500 font-bold uppercase">{t.clients.card3Desc}</span>
             </div>
           </div>
         </div>
@@ -42,25 +45,25 @@ const Clients: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-12">
             <div className="space-y-4">
-              <h4 className="text-xl font-display font-bold text-[#1A1A1A] mb-2">Case Meta: Experiência Eva</h4>
+              <h4 className="text-xl font-display font-bold text-[#1A1A1A] mb-2">{t.clients.caseTitle}</h4>
               <p className="text-[#4A30E4] font-bold text-sm mb-4">
-                Onboarding remoto, consistente e humano em escala global.
+                {t.clients.caseSubtitle}
               </p>
 
               <div className="text-gray-500 text-sm leading-relaxed max-w-md mb-6 space-y-4">
                 <p>
-                  Com times distribuídos em vários países, a Meta precisava reduzir improviso no onboarding sem perder o lado humano.
+                  {t.clients.caseP1}
                 </p>
                 <p>
-                  Com a Eva, cada pessoa recebe apenas o que precisa saber, no momento certo, de forma personalizada e relevante.
+                  {t.clients.caseP2}
                 </p>
               </div>
 
               <ul className="space-y-3 mb-8">
                 {[
-                  "Cada novo integrante recebe só o que precisa saber, nada além, nada aquém",
-                  "A jornada é ajustada com base no que funciona para as pessoas",
-                  "Menos esforço manual para líderes, mais proximidade com o time"
+                  t.clients.caseBullet1,
+                  t.clients.caseBullet2,
+                  t.clients.caseBullet3
                 ].map((item, i) => (
                   <li key={i} className="flex gap-3 items-start">
                     <span className="material-symbols-outlined text-green-500 text-lg flex-shrink-0 mt-0.5">check_circle</span>
@@ -72,14 +75,14 @@ const Clients: React.FC = () => {
               <div className="space-y-4">
                 <div className="p-6 frosted-glass-card bg-muted/20 flex items-center gap-6">
                   <div className="text-primary font-[800] text-4xl font-display">3.000</div>
-                  <div className="text-sm font-bold text-[#1A1A1A] leading-tight max-w-[150px]">colaboradores em trabalho remoto</div>
+                  <div className="text-sm font-bold text-[#1A1A1A] leading-tight max-w-[150px]">{t.clients.stat1Label}</div>
                 </div>
                 <div className="p-6 frosted-glass-card bg-muted/20 flex items-center gap-6">
                   <div className="text-primary font-[800] text-4xl font-display">14</div>
-                  <div className="text-sm font-bold text-[#1A1A1A] leading-tight max-w-[150px]">países com times distribuídos</div>
+                  <div className="text-sm font-bold text-[#1A1A1A] leading-tight max-w-[150px]">{t.clients.stat2Label}</div>
                 </div>
                 <p className="text-gray-500 text-sm font-medium italic pt-4 border-t border-gray-100 mt-4">
-                  Menos improviso no onboarding. Mais clareza para quem entra. Mais tempo para líderes focarem no que importa.
+                  {t.clients.caseFooter}
                 </p>
               </div>
             </div>
@@ -120,8 +123,8 @@ const Clients: React.FC = () => {
                   <span className="material-symbols-outlined text-primary">verified</span>
                 </div>
                 <div>
-                  <p className="text-[10px] uppercase tracking-widest font-bold text-gray-400">Case de Sucesso</p>
-                  <p className="text-sm font-bold text-dark">Meta + Eva People</p>
+                  <p className="text-[10px] uppercase tracking-widest font-bold text-gray-400">{t.clients.videoTagTitle}</p>
+                  <p className="text-sm font-bold text-dark">{t.clients.videoTagSubtitle}</p>
                 </div>
               </div>
             </div>

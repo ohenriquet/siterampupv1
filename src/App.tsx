@@ -1,10 +1,10 @@
-
 import React, { Suspense, lazy } from 'react';
 import { IMAGES } from './constants';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Challenge from './components/Challenge';
 import Reveal from './components/Reveal';
+import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 
 // Lazy load heavy below-the-fold components
 const Methodology = lazy(() => import('./components/Methodology'));
@@ -19,9 +19,8 @@ const LoadingFallback = () => (
   </div>
 );
 
-const App: React.FC = () => {
-  // IntersectionObserver removed in favor of Reveal component
-
+const MainContent: React.FC = () => {
+  const { t } = useLanguage();
 
   return (
     <div className="min-h-screen bg-white relative">
@@ -74,11 +73,11 @@ const App: React.FC = () => {
       <Reveal>
         <section className="py-20 bg-primary relative overflow-hidden">
           <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-            <h2 className="font-display text-3xl md:text-5xl font-[800] text-white mb-6">Pronto para acelerar?</h2>
-            <p className="text-white/80 text-lg mb-10 font-medium">Não deixe sua empresa perder tempo no box. Acelere o ramp-up e crie uma cultura de evolução constante no time.</p>
+            <h2 className="font-display text-3xl md:text-5xl font-[800] text-white mb-6">{t.ctaBanner.title}</h2>
+            <p className="text-white/80 text-lg mb-10 font-medium">{t.ctaBanner.subtitle}</p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="#contratar" className="bg-white text-primary px-8 py-4 rounded-xl font-bold uppercase tracking-tight hover:bg-gray-100 transition-all">Ver planos</a>
-              <a href="#" className="border border-white/30 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-tight hover:bg-white/10 transition-all">Falar com consultor</a>
+              <a href="#contratar" className="bg-white text-primary px-8 py-4 rounded-xl font-bold uppercase tracking-tight hover:bg-gray-100 transition-all">{t.ctaBanner.button1}</a>
+              <a href="#" className="border border-white/30 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-tight hover:bg-white/10 transition-all">{t.ctaBanner.button2}</a>
             </div>
           </div>
           {/* Subtle background glow */}
@@ -99,6 +98,14 @@ const App: React.FC = () => {
         <Footer />
       </Suspense>
     </div>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <LanguageProvider>
+      <MainContent />
+    </LanguageProvider>
   );
 };
 
