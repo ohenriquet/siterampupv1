@@ -1,14 +1,22 @@
 
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { IMAGES } from './constants';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Challenge from './components/Challenge';
-import Methodology from './components/Methodology';
-import Clients from './components/Clients';
-import SocialProof from './components/SocialProof';
-import Pricing from './components/Pricing';
-import Footer from './components/Footer';
+
+// Lazy load heavy below-the-fold components
+const Methodology = lazy(() => import('./components/Methodology'));
+const Clients = lazy(() => import('./components/Clients'));
+const SocialProof = lazy(() => import('./components/SocialProof'));
+const Pricing = lazy(() => import('./components/Pricing'));
+const Footer = lazy(() => import('./components/Footer'));
+
+const LoadingFallback = () => (
+  <div className="py-20 flex justify-center items-center">
+    <div className="animate-pulse bg-gray-200 h-10 w-10 rounded-full"></div>
+  </div>
+);
 
 const App: React.FC = () => {
   React.useEffect(() => {
@@ -63,9 +71,11 @@ const App: React.FC = () => {
 
       {/* Content Sections */}
       <div className="checkered-flag"></div>
-      <div className="motion-in wind-trail transition-all">
-        <Methodology />
-      </div>
+      <Suspense fallback={<LoadingFallback />}>
+        <div className="motion-in wind-trail transition-all">
+          <Methodology />
+        </div>
+      </Suspense>
 
       <div className="checkered-flag"></div>
 
@@ -83,16 +93,18 @@ const App: React.FC = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-white/10 blur-[120px] rounded-full"></div>
       </section>
 
-      <div className="motion-in">
-        <Clients />
-      </div>
-      <div className="motion-in">
-        <SocialProof />
-      </div>
-      <div className="motion-in">
-        <Pricing />
-      </div>
-      <Footer />
+      <Suspense fallback={<LoadingFallback />}>
+        <div className="motion-in">
+          <Clients />
+        </div>
+        <div className="motion-in">
+          <SocialProof />
+        </div>
+        <div className="motion-in">
+          <Pricing />
+        </div>
+        <Footer />
+      </Suspense>
     </div>
   );
 };
