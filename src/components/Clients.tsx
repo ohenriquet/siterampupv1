@@ -9,7 +9,7 @@ const Clients: React.FC = () => {
     <section className="py-24 bg-white border-t border-gray-100" id="quem-atendemos">
       <div className="max-w-6xl mx-auto px-6">
         <div className="mb-16 text-center">
-          <h2 className="font-display text-[32px] md:text-[48px] font-[800] text-[#1A1A1A] mb-4 tracking-tight">Quem atendemos</h2>
+          <h2 className="font-display text-[40px] md:text-[64px] font-[800] text-[#1A1A1A] mb-4 tracking-tight">Para times híbridos e remotos</h2>
           <p className="text-gray-500 font-semibold text-lg max-w-3xl mx-auto">
             Focamos nos departamentos que aceleram a operação. Atendemos empresas em rápido crescimento que fazem mais de 100 contratações por ano.
           </p>
@@ -42,19 +42,45 @@ const Clients: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-12">
             <div className="space-y-4">
-              <h4 className="text-xl font-display font-bold text-[#1A1A1A]">Case Meta: Experiência Eva</h4>
-              <p className="text-gray-500 text-sm leading-relaxed max-w-md">
-                Veja como a Caroliny Appel (Gerente de Pessoas na Meta) transformou o onboarding técnico em algo digital, simples e humano.
+              <h4 className="text-xl font-display font-bold text-[#1A1A1A] mb-2">Case Meta: Experiência Eva</h4>
+              <p className="text-[#4A30E4] font-bold text-sm mb-4">
+                Onboarding remoto, consistente e humano em escala global.
               </p>
-              <div className="pt-4 space-y-4">
+
+              <div className="text-gray-500 text-sm leading-relaxed max-w-md mb-6 space-y-4">
+                <p>
+                  Com times distribuídos em vários países, a Meta precisava reduzir improviso no onboarding sem perder o lado humano.
+                </p>
+                <p>
+                  Com a Eva, cada pessoa recebe apenas o que precisa saber, no momento certo, de forma personalizada e relevante.
+                </p>
+              </div>
+
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Cada novo integrante recebe só o que precisa saber, nada além, nada aquém",
+                  "A jornada é ajustada com base no que funciona para as pessoas",
+                  "Menos esforço manual para líderes, mais proximidade com o time"
+                ].map((item, i) => (
+                  <li key={i} className="flex gap-3 items-start">
+                    <span className="material-symbols-outlined text-green-500 text-lg flex-shrink-0 mt-0.5">check_circle</span>
+                    <span className="text-sm font-medium text-gray-700 leading-snug">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="space-y-4">
                 <div className="p-6 frosted-glass-card bg-muted/20 flex items-center gap-6">
-                  <div className="text-primary font-[800] text-3xl font-display">70%</div>
-                  <div className="text-sm font-semibold text-[#1A1A1A]/70">Redução no tempo de onboarding técnico</div>
+                  <div className="text-primary font-[800] text-4xl font-display">3.000</div>
+                  <div className="text-sm font-bold text-[#1A1A1A] leading-tight max-w-[150px]">colaboradores em trabalho remoto</div>
                 </div>
                 <div className="p-6 frosted-glass-card bg-muted/20 flex items-center gap-6">
-                  <div className="text-primary font-[800] text-3xl font-display">22h</div>
-                  <div className="text-sm font-semibold text-[#1A1A1A]/70">Poupadas mensalmente por cada gestor</div>
+                  <div className="text-primary font-[800] text-4xl font-display">14</div>
+                  <div className="text-sm font-bold text-[#1A1A1A] leading-tight max-w-[150px]">países com times distribuídos</div>
                 </div>
+                <p className="text-gray-500 text-sm font-medium italic pt-4 border-t border-gray-100 mt-4">
+                  Menos improviso no onboarding. Mais clareza para quem entra. Mais tempo para líderes focarem no que importa.
+                </p>
               </div>
             </div>
           </div>

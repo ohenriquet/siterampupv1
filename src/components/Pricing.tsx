@@ -2,17 +2,17 @@
 import React, { useState } from 'react';
 
 const Pricing: React.FC = () => {
-  const [teamHires, setTeamHires] = useState(10);
-  const [companyHires, setCompanyHires] = useState(50);
+  const [teamHires, setTeamHires] = useState(20);
+  const [companyHires, setCompanyHires] = useState(100);
 
-  // Cálculo de preço para equipes (0-20 contratações)
+  // Cálculo de preço para equipes (20-100 contratações)
   const calculateTeamPrice = (hires: number) => {
-    return 490;
+    return (hires / 20) * 490;
   };
 
-  // Cálculo de preço para empresas (0-100 contratações)
+  // Cálculo de preço para empresas (100-500 contratações)
   const calculateCompanyPrice = (hires: number) => {
-    return 1290;
+    return (hires / 100) * 1290;
   };
 
   const plans = [
@@ -27,8 +27,9 @@ const Pricing: React.FC = () => {
         "Ramp-up até os primeiros 90 dias"
       ],
       rangeLabel: "CONTRATAÇÕES ANUAIS",
-      minRange: 0,
-      maxRange: 20,
+      minRange: 20,
+      maxRange: 100,
+      step: 20,
       currentValue: teamHires,
       setValue: setTeamHires,
       price: calculateTeamPrice(teamHires),
@@ -47,14 +48,15 @@ const Pricing: React.FC = () => {
         "Integração com ATS, folha ou LMS"
       ],
       rangeLabel: "CONTRATAÇÕES ANUAIS",
-      minRange: 0,
-      maxRange: 100,
+      minRange: 100,
+      maxRange: 500,
+      step: 100,
       currentValue: companyHires,
       setValue: setCompanyHires,
       price: calculateCompanyPrice(companyHires),
       ctaText: "SOLICITAR DEMO",
       highlight: true,
-      highlightLabel: "LANÇAMENTO ESPECIAL"
+      highlightLabel: ""
     }
   ];
 
@@ -77,8 +79,8 @@ const Pricing: React.FC = () => {
             <div
               key={idx}
               className={`relative bg-white rounded-3xl p-8 md:p-10 border-2 transition-all ${plan.highlight
-                  ? 'border-primary shadow-2xl shadow-primary/10'
-                  : 'border-gray-200 shadow-lg'
+                ? 'border-primary shadow-2xl shadow-primary/10'
+                : 'border-gray-200 shadow-lg'
                 }`}
             >
               {/* Badge */}
@@ -140,6 +142,7 @@ const Pricing: React.FC = () => {
                     type="range"
                     min={plan.minRange}
                     max={plan.maxRange}
+                    step={plan.step}
                     value={plan.currentValue}
                     onChange={(e) => plan.setValue(parseInt(e.target.value))}
                     className="w-full h-2 bg-gray-200 rounded-full appearance-none cursor-pointer slider-thumb"
@@ -152,31 +155,26 @@ const Pricing: React.FC = () => {
                   <div className="flex justify-between mt-2">
                     <span className="text-xs text-gray-400 font-medium">{plan.minRange}</span>
                     <span className="text-xs text-gray-400 font-medium">
-                      {plan.maxRange === 100 ? 'LIGUE PARA MAIS' : plan.maxRange}
+                      {plan.maxRange}
                     </span>
                   </div>
                 </div>
-
-                {/* Special Label */}
-                {plan.highlightLabel && (
-                  <p className="text-[10px] text-gray-400 font-medium mt-3 uppercase tracking-wide">
-                    {plan.highlightLabel}
-                  </p>
-                )}
               </div>
 
               {/* Price and CTA */}
               <div className="flex items-center justify-between gap-4">
-                <div className="flex items-baseline gap-1">
+                <div className="flex items-baseline gap-1 whitespace-nowrap">
                   <span className="text-xs text-gray-500 font-medium">R$</span>
                   <span className="text-4xl md:text-5xl font-[900] text-[#1A1A1A]">
                     {plan.price.toLocaleString('pt-BR')}
                   </span>
+                  <span className="text-xs text-gray-500 font-medium">/mês</span>
                 </div>
                 <button
+                  onClick={() => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })}
                   className={`px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-tight transition-all flex items-center gap-2 ${plan.highlight
-                      ? 'bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/30'
-                      : 'bg-[#F4F2FF] text-primary hover:bg-[#E9E5FF]'
+                    ? 'bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/30'
+                    : 'bg-[#F4F2FF] text-primary hover:bg-[#E9E5FF]'
                     }`}
                 >
                   {plan.ctaText}

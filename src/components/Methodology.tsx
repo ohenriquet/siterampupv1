@@ -32,23 +32,23 @@ const Methodology: React.FC = () => {
             <div className="flex flex-col items-center mb-16 text-center wind-trail">
               <span className="font-display font-[900] text-[120px] md:text-[180px] leading-none text-primary/10 mb-[-20px] md:mb-[-40px]">1</span>
               <img src="/traffic/red.png" alt="Traffic Light Red" className="h-[144px] w-auto mb-6 relative z-10" loading="lazy" />
-              <h3 className="font-display font-[800] text-3xl md:text-5xl text-[#1A1A1A]">Setup da Eva</h3>
+              <h3 className="font-display font-[800] text-3xl md:text-5xl text-[#1A1A1A]">Ensinamos a Eva sobre seu negócio</h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
               {[
                 {
-                  title: "Templates por área",
-                  desc: "Tech, Sales e CS prontos para rodar.\nComece com um modelo validado e adapte ao seu contexto.",
+                  title: "Templates validados",
+                  desc: "Tech, Sales e CS prontos para rodar.\nComece com workflows validados e ajuste ao seu contexto.",
                   icon: "dataset"
                 },
                 {
-                  title: "Customização",
-                  desc: "Ajuste de blocos, conteúdos e links em minutos.\nSem depender de time técnico para cada mudança simples.",
+                  title: "Customização de templates",
+                  desc: "Ajuste blocos, conteúdos e links em minutos.\nCrie variações por área sem depender do time técnico.",
                   icon: "settings_input_component"
                 },
                 {
-                  title: "Previsibilidade",
-                  desc: "Publicação da trilha com foco em execução.\nO time segue um padrão claro e você acompanha o progresso por fase.",
+                  title: "IA treinada no seu contexto",
+                  desc: "A Eva aprende com suas rotinas, termos e padrões.\nMenos improviso no onboarding e mais consistência na execução.",
                   icon: "verified_user"
                 }
               ].map((step, idx) => (

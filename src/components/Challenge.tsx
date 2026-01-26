@@ -10,7 +10,7 @@ const Challenge: React.FC = () => {
 
       <section className="pb-24 pt-16 relative overflow-hidden" id="quem-somos">
         <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
-          <h2 className="font-display text-[32px] md:text-[56px] font-[800] mb-12 leading-tight text-white max-w-4xl mx-auto">Sua empresa está perdendo tração?</h2>
+          <h2 className="font-display text-[32px] md:text-[56px] font-[800] mb-12 leading-tight text-white max-w-4xl mx-auto">Novos integrantes levam meses para ficar produtivos?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
             <div className="p-8 dark-glass-card h-full">
               <h3 className="text-xl font-display font-bold mb-4 text-white">Líderes sobrecarregados</h3>
@@ -19,9 +19,9 @@ const Challenge: React.FC = () => {
               </p>
             </div>
             <div className="p-8 dark-glass-card h-full">
-              <h3 className="text-xl font-display font-bold mb-4 text-white">Autonomia atrasada</h3>
+              <h3 className="text-xl font-display font-bold mb-4 text-white">Repetitivo e Manual</h3>
               <p className="text-gray-300 leading-relaxed text-sm font-medium">
-                O conhecimento fica concentrado e a transferência acontece no improviso. Isso cria dependências, retrabalho e atrasa a autonomia dos novos integrantes.
+                Sem um processo claro, o onboarding vira sequência de tarefas repetidas e manuais. Isso consome tempo do time, aumenta o improviso e atrasa a evolução dos novos integrantes.
               </p>
             </div>
             <div className="p-8 dark-glass-card h-full">
