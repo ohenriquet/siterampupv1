@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
             <span className="block text-[45px] md:text-[72px] leading-[1] font-[800] mb-2 uppercase tracking-tight">{t.hero.title}</span>
             <div className="flex items-center gap-4 text-[24px] md:text-[36px] font-medium opacity-90">
               <span>{t.hero.with}</span>
-              <img src="/logo eva principal.png" alt="Eva Logo" className="h-[28px] md:h-[42px] mt-1" />
+              <img src={import.meta.env.BASE_URL + "logo-eva-principal.png"} alt="Eva Logo" className="h-[28px] md:h-[42px] mt-1" />
             </div>
           </h1>
 

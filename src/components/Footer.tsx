@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
 
           {/* Center Logo */}
           <div className="flex-shrink-0">
-            <img src="/logo eva principal.png" alt="Eva People" className="h-8 md:h-10 w-auto" />
+            <img src={import.meta.env.BASE_URL + "logo-eva-principal.png"} alt="Eva People" className="h-8 md:h-10 w-auto" />
           </div>
 
           {/* Social Icons */}
@@ -80,19 +80,19 @@ const Footer: React.FC = () => {
           <div className="flex flex-col items-center gap-4">
             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">{t.footer.partOf}</span>
             <div className="h-12 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-              <img src="/logos/cubo.png" alt="Cubo" className="h-8 w-auto mix-blend-multiply" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement!.innerHTML = '<span class="text-xl font-bold text-gray-400">cubo</span>'; }} />
+              <img src={import.meta.env.BASE_URL + "logos/cubo.png"} alt="Cubo" className="h-8 w-auto mix-blend-multiply" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement!.innerHTML = '<span class="text-xl font-bold text-gray-400">cubo</span>'; }} />
             </div>
           </div>
           <div className="flex flex-col items-center gap-4">
             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">{t.footer.investedBy}</span>
             <div className="h-12 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-              <img src="/logos/ace.png" alt="ACE Ventures" className="h-8 w-auto mix-blend-multiply" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement!.innerHTML = '<span class="text-xl font-bold text-gray-400">ACE</span>'; }} />
+              <img src={import.meta.env.BASE_URL + "logos/ace.png"} alt="ACE Ventures" className="h-8 w-auto mix-blend-multiply" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement!.innerHTML = '<span class="text-xl font-bold text-gray-400">ACE</span>'; }} />
             </div>
           </div>
           <div className="flex flex-col items-center gap-4">
             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">{t.footer.recognizedBy}</span>
             <div className="h-12 flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-              <img src="/logos/top10.png" alt="Top 10 HR Techs" className="h-10 w-auto mix-blend-multiply" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement!.innerHTML = '<span class="text-xl font-bold text-gray-400">TOP 10 HRTechs</span>'; }} />
+              <img src={import.meta.env.BASE_URL + "logos/top10.png"} alt="Top 10 HR Techs" className="h-10 w-auto mix-blend-multiply" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement!.innerHTML = '<span class="text-xl font-bold text-gray-400">TOP 10 HRTechs</span>'; }} />
             </div>
           </div>
         </div>
