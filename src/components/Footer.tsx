@@ -111,7 +111,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-[11px] text-gray-400 font-medium">
             <span>{t.footer.rights}</span>
             <span className="hidden md:block">|</span>
-            <a href="#" className="hover:text-[#4A30E4] transition-colors">{t.footer.privacy}</a>
+            <a href="https://evapeople.com.br/politica-de-privacidade/" className="hover:text-[#4A30E4] transition-colors">{t.footer.privacy}</a>
           </div>
           <p className="text-[10px] text-gray-300 font-medium uppercase tracking-wider max-w-2xl mx-auto leading-relaxed">
             {t.footer.address}
