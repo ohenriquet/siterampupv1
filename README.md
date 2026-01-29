@@ -1,20 +1,62 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Eva - AI Ramp-up Buddy Scope
 
-# Run and deploy your AI Studio app
+Este projeto foi inicializado com [Vite](https://vitejs.dev/).
 
-This contains everything you need to run your app locally.
+## Desenvolvimento
 
-View your app in AI Studio: https://ai.studio/apps/drive/1CwbWjsTXLvm0ESLmjf4VoJEHwbkX05Q-
+1.  **Instalar dependências**:
+    ```bash
+    npm install
+    ```
+2.  **Rodar servidor local**:
+    ```bash
+    npm run dev
+    ```
 
-## Run Locally
+## Deploy (WordPress)
 
-**Prerequisites:**  Node.js
+O projeto está configurado para ser embarcado em um tema WordPress.
 
+### Como gerar o build para WP
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Use o comando dedicado que gera o build e copia para a pasta de destino:
+
+```bash
+npm run build:wp
+```
+
+Por padrão, isso cria uma pasta `wp-dist` na raiz do projeto.
+Para mudar o destino, use a variável de ambiente `WP_BUILD_DEST`:
+
+**Windows (PowerShell):**
+```powershell
+$env:WP_BUILD_DEST="C:\Caminho\Para\Seu\Tema\assets\eva-home"; npm run build:wp
+```
+
+### Estrutura dos Arquivos
+
+O build vai gerar:
+- `manifest.json`: Mapa de arquivos gerados pelo Vite.
+- `assets/`: Pasta contendo JS e CSS (com hashes).
+- `logos/`, `cases/`, etc: Arquivos estáticos.
+- `index.html`: Entry point (HTML).
+
+### Integração com WordPress (PHP)
+
+O WordPress deve:
+1.  Ler o arquivo `manifest.json`.
+2.  Encontrar a entrada `index.html`.
+3.  Enfileirar o CSS listado em `css`.
+4.  Enfileirar o arquivo JS principal listado em `file` (como module).
+5.  Injetar `<base href="...">` para corrigir caminhos relativos de imagens.
+
+Exemplo de estrutura no servidor:
+```
+/wp-content/themes/seu-tema/assets/eva-home/
+  ├── manifest.json
+  ├── assets/
+  │   ├── index-XXXX.js
+  │   └── index-YYYY.css
+  └── logos/
+      └── cubo.png
+```

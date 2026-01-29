@@ -2,100 +2,80 @@
 <html lang="pt-BR" class="scroll-smooth">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eva - AI Ramp-up Buddy</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#4A30E4",
-                        dark: "#1A1A1A",
-                        accent: "#F4F2FF",
-                        muted: "#F5F5F5",
-                    },
-                    fontFamily: {
-                        sans: ["Plus Jakarta Sans", "sans-serif"],
-                        display: ["Montserrat", "sans-serif"],
-                    },
-                    animation: {
-                        'infinite-scroll': 'infinite-scroll 40s linear infinite',
-                    },
-                    keyframes: {
-                        'infinite-scroll': {
-                            from: { transform: 'translateX(0)' },
-                            to: { transform: 'translateX(-50%)' },
-                        }
-                    }
-                },
-            },
-        };
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eva - AI Ramp-up Buddy</title>
+  <meta name="description"
+    content="A Eva acelera o ramp-up de novos talentos de 0 a 100 usando IA. Economize tempo de gestores e aumente a produtividade desde o primeiro dia." />
+
+  <!-- Preload Critical Hero Image -->
+  <link rel="preload" as="image" href="hero-bg-v4.webp" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="favicon/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://evapeople.com.br/" />
+  <meta property="og:title" content="Eva - AI Ramp-up Buddy" />
+  <meta property="og:description" content="A Eva acelera o ramp-up de novos talentos de 0 a 100 usando IA." />
+  <meta property="og:image" content="og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://evapeople.com.br/" />
+  <meta property="twitter:title" content="Eva - AI Ramp-up Buddy" />
+  <meta property="twitter:description" content="A Eva acelera o ramp-up de novos talentos de 0 a 100 usando IA." />
+  <meta property="twitter:image" content="og-image.png" />
+
+  <!-- Structured Data (JSON-LD) for SEO & ChatGPT -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "Eva People",
+          "url": "https://evapeople.com.br/",
+          "logo": "https://evapeople.com.br/logo%20eva%20principal.png",
+          "sameAs": [
+            "https://www.linkedin.com/company/evapeopleai/",
+            "https://www.instagram.com/evapeople_ai/",
+            "https://www.youtube.com/@evapeople_ai"
+          ],
+          "description": "IA para People Ops que acelera o ramp-up de novos talentos."
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Eva - AI Ramp-up Buddy",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "offers": {
+            "@type": "Offer",
+            "price": "490.00",
+            "priceCurrency": "BRL"
+          }
+        }
+      ]
+    }
     </script>
-    <style type="text/css">
-        .hero-gradient {
-            background: linear-gradient(180deg, rgba(26, 26, 26, 0.1) 0%, rgba(26, 26, 26, 0.2) 60%, rgba(26, 26, 26, 0.5) 100%);
-        }
 
-        .ultra-glass-panel {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(64px) saturate(250%);
-            -webkit-backdrop-filter: blur(64px) saturate(250%);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            box-shadow:
-                0 25px 50px -12px rgba(0, 0, 0, 0.15),
-                0 0 60px rgba(255, 255, 255, 0.25) inset;
-        }
-
-        .liquid-glass {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 1.5rem;
-        }
-
-        .frosted-glass-card {
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            border-radius: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .dark-glass-card {
-            background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 1.5rem;
-        }
-
-        .testimonial-carousel {
-            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-        }
-
-        .transition-blur {
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
-        }
-    </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
 </head>
 
 <body class="font-sans bg-white text-[#1A1A1A] overflow-x-hidden">
-    <div id="root"></div>
-    <script type="module" src="/src/index.tsx"></script>
+  <div id="root"></div>
+  <script type="module" src="src/index.tsx"></script>
 </body>
 
 </html>
