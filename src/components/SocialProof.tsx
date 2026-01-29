@@ -13,20 +13,20 @@ const SocialProof: React.FC = () => {
       role: "Diretora de Pessoas, Cultura e ESG",
       quote: t.socialProof.case1Quote,
       highlight: t.socialProof.case1Highlight,
-      logo: import.meta.env.BASE_URL + "cases/lwsa_case.png", // LWSA Official Logo
+      logo: "/cases/lwsa_case.png", // LWSA Official Logo
       buttonText: t.socialProof.case1Button,
       link: "https://evapeople.com.br/wp-content/uploads/2025/06/Case_LWSA_202506.pdf",
-      avatar: import.meta.env.BASE_URL + "cases/nathalia.jpg"
+      avatar: "/cases/nathalia.jpg"
     },
     {
       name: "Lilian Ghirotto",
       role: "Coordenadora de DHO",
       quote: t.socialProof.case2Quote,
       highlight: t.socialProof.case2Highlight,
-      logo: import.meta.env.BASE_URL + "cases/elettromec_case.png", // Elettromec Official Logo
+      logo: "/cases/elettromec_case.png", // Elettromec Official Logo
       buttonText: t.socialProof.case2Button,
       link: "https://evapeople.com.br/wp-content/uploads/2025/06/Case_Elettromec_202506.pdf",
-      avatar: import.meta.env.BASE_URL + "cases/lilian.jpg"
+      avatar: "/cases/lilian.jpg"
     }
   ];
 

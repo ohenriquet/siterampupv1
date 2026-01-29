@@ -10,8 +10,8 @@ export const translations = {
         },
         hero: {
             kicker: "IA para People Ops",
-            title: "Antecipe Resultados",
-            with: "com a",
+            title: "Colaboradores Apadrinhados",
+            with: "pela",
             box1: "Onboarding Digital",
             box2: "Buddy System",
             box3: "IA Multicanal",
@@ -33,7 +33,7 @@ export const translations = {
         },
         methodology: {
             title: "Como funciona",
-            step1Title: "Ensinamos a Eva sobre seu negócio",
+            step1Title: "Ensine a Eva",
             step1Card1Title: "Templates validados",
             step1Card1Desc: "Tech, Sales e CS prontos para rodar.\nComece com workflows validados e ajuste ao seu contexto.",
             step1Card2Title: "Customização de templates",
@@ -50,7 +50,7 @@ export const translations = {
             slackMockup: "Eva Buddy no Slack",
             whatsappMockup: "Eva Buddy no WhatsApp",
             teamsMockup: "Eva Buddy no Teams",
-            step3Title: "Ready to Work",
+            step3Title: "Talentos Acelerados",
             step3Card1Title: "Acompanhamento 30/60/90",
             step3Card1Desc: "Status e pontos de atenção por pessoa, com foco em destravar o dia a dia e manter ritmo.",
             step3Card2Title: "Plano de ação com dono e prazo",
@@ -123,10 +123,10 @@ export const translations = {
             address: "Cubo Itaú®, Alameda Vicente Pinzon, 54 – 12º andar – Vila Olímpia, São Paulo – SP, 04547-130",
         },
         ctaBanner: {
-            title: "Pronto para acelerar?",
+            title: "Prontos para acelerar?",
             subtitle: "Não deixe sua empresa perder tempo no box. Acelere o ramp-up e crie uma cultura de evolução constante no time.",
             button1: "Ver planos",
-            button2: "Falar com consultor",
+            button2: "Solicitar Demo",
         }
     },
     EN: {
@@ -137,8 +137,8 @@ export const translations = {
         },
         hero: {
             kicker: "AI for People Ops",
-            title: "Anticipate Results",
-            with: "with",
+            title: "Collaborators Mentored",
+            with: "by",
             box1: "Digital Onboarding",
             box2: "Buddy System",
             box3: "Multichannel AI",
@@ -253,7 +253,7 @@ export const translations = {
             title: "Ready to accelerate?",
             subtitle: "Don't let your company lose time in the pit stop. Accelerate ramp-up and create a culture of constant evolution in the team.",
             button1: "See plans",
-            button2: "Talk to consultant",
+            button2: "Request Demo",
         }
     },
     ES: {
@@ -264,8 +264,8 @@ export const translations = {
         },
         hero: {
             kicker: "IA para People Ops",
-            title: "Anticipe Resultados",
-            with: "con",
+            title: "Colaboradores Apadrinados",
+            with: "por",
             box1: "Onboarding Digital",
             box2: "Buddy System",
             box3: "IA Multicanal",
@@ -377,10 +377,10 @@ export const translations = {
             address: "Cubo Itaú®, Alameda Vicente Pinzon, 54 – Piso 12 – Vila Olímpia, São Paulo – SP, 04547-130",
         },
         ctaBanner: {
-            title: "¿Listo para acelerar?",
+            title: "¿Listos para acelerar?",
             subtitle: "No deje que su empresa pierda tiempo en boxes. Acelere el ramp-up y cree una cultura de evolución constante en el equipo.",
             button1: "Ver planes",
-            button2: "Hablar con consultor",
+            button2: "Solicitar Demo",
         }
     }
 };
