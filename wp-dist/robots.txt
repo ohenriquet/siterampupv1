@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://evapeople.com.br/sitemap.xml
