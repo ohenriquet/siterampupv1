@@ -15,13 +15,13 @@ const Methodology: React.FC = () => {
   ];
 
   const integrations = [
-    { name: "Gmail", icon: "/logos/tools/gmail.png" },
-    { name: "Google Calendar", icon: "/logos/tools/google-calendar.png" },
-    { name: "Google Chat", icon: "/logos/tools/google-chat.png" },
-    { name: "Slack", icon: "/logos/tools/slack.png" },
-    { name: "Teams", icon: "/logos/tools/teams.png" },
-    { name: "WhatsApp", icon: "/logos/tools/whatsapp.png" },
-    { name: "Webhooks", icon: "/logos/tools/webhooks.png" },
+    { name: "Gmail", icon: import.meta.env.BASE_URL + "logos/tools/gmail.png" },
+    { name: "Google Calendar", icon: import.meta.env.BASE_URL + "logos/tools/google-calendar.png" },
+    { name: "Google Chat", icon: import.meta.env.BASE_URL + "logos/tools/google-chat.png" },
+    { name: "Slack", icon: import.meta.env.BASE_URL + "logos/tools/slack.png" },
+    { name: "Teams", icon: import.meta.env.BASE_URL + "logos/tools/teams.png" },
+    { name: "WhatsApp", icon: import.meta.env.BASE_URL + "logos/tools/whatsapp.png" },
+    { name: "Webhooks", icon: import.meta.env.BASE_URL + "logos/tools/webhooks.png" },
   ];
 
   return (
@@ -36,7 +36,7 @@ const Methodology: React.FC = () => {
           <div className="flex flex-col items-center">
             <Reveal className="flex flex-col items-center mb-16 text-center wind-trail">
               <span className="font-display font-[900] text-[120px] md:text-[180px] leading-none text-primary/10 mb-[-20px] md:mb-[-40px]">1</span>
-              <img src="/traffic/red.png" alt="Traffic Light Red" className="h-[144px] w-auto mb-6 relative z-10" loading="lazy" />
+              <img src={import.meta.env.BASE_URL + "traffic/red.png"} alt="Traffic Light Red" className="h-[144px] w-auto mb-6 relative z-10" loading="lazy" />
               <h3 className="font-display font-[800] text-3xl md:text-5xl text-[#1A1A1A]">{t.methodology.step1Title}</h3>
             </Reveal>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
@@ -85,7 +85,7 @@ const Methodology: React.FC = () => {
           <div className="flex flex-col items-center">
             <Reveal className="flex flex-col items-center mb-16 text-center wind-trail">
               <span className="font-display font-[900] text-[120px] md:text-[180px] leading-none text-primary/10 mb-[-20px] md:mb-[-40px]">2</span>
-              <img src="/traffic/yellow.png" alt="Traffic Light Yellow" className="h-[144px] w-auto mb-6 relative z-10" loading="lazy" />
+              <img src={import.meta.env.BASE_URL + "traffic/yellow.png"} alt="Traffic Light Yellow" className="h-[144px] w-auto mb-6 relative z-10" loading="lazy" />
               <h3 className="font-display font-[800] text-3xl md:text-5xl text-[#1A1A1A]">{t.methodology.step2Title}</h3>
             </Reveal>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
@@ -123,7 +123,7 @@ const Methodology: React.FC = () => {
                 {/* Slack Mockup */}
                 <div className="frosted-glass-card p-4 bg-white shadow-xl translate-x-4">
                   <div className="flex items-center gap-3 mb-2 p-2 bg-gray-50 rounded-lg">
-                    <img src="/logos/tools/slack.png" className="h-4 w-4" alt="Slack" />
+                    <img src={import.meta.env.BASE_URL + "logos/tools/slack.png"} className="h-4 w-4" alt="Slack" />
                     <span className="text-xs font-bold text-gray-700">{t.methodology.slackMockup}</span>
                   </div>
                   <div className="px-2">
@@ -134,7 +134,7 @@ const Methodology: React.FC = () => {
                 {/* WhatsApp Mockup */}
                 <div className="frosted-glass-card p-4 bg-white shadow-xl -translate-x-4">
                   <div className="flex items-center gap-3 mb-2 p-2 bg-[#E7FFDB] rounded-lg">
-                    <img src="/logos/tools/whatsapp.png" className="h-4 w-4" alt="WhatsApp" />
+                    <img src={import.meta.env.BASE_URL + "logos/tools/whatsapp.png"} className="h-4 w-4" alt="WhatsApp" />
                     <span className="text-xs font-bold text-gray-700">{t.methodology.whatsappMockup}</span>
                   </div>
                   <div className="px-2">
@@ -145,7 +145,7 @@ const Methodology: React.FC = () => {
                 {/* Teams Mockup */}
                 <div className="frosted-glass-card p-4 bg-white shadow-xl translate-x-2">
                   <div className="flex items-center gap-3 mb-2 p-2 bg-[#F3F2F1] rounded-lg">
-                    <img src="/logos/tools/teams.png" className="h-4 w-4" alt="Teams" />
+                    <img src={import.meta.env.BASE_URL + "logos/tools/teams.png"} className="h-4 w-4" alt="Teams" />
                     <span className="text-xs font-bold text-gray-700">{t.methodology.teamsMockup}</span>
                   </div>
                   <div className="px-2">
@@ -160,7 +160,7 @@ const Methodology: React.FC = () => {
           <div className="flex flex-col items-center">
             <Reveal className="flex flex-col items-center mb-16 text-center wind-trail">
               <span className="font-display font-[900] text-[120px] md:text-[180px] leading-none text-primary/10 mb-[-20px] md:mb-[-40px]">3</span>
-              <img src="/traffic/green.png" alt="Traffic Light Green" className="h-[144px] w-auto mb-6 relative z-10" loading="lazy" />
+              <img src={import.meta.env.BASE_URL + "traffic/green.png"} alt="Traffic Light Green" className="h-[144px] w-auto mb-6 relative z-10" loading="lazy" />
               <h3 className="font-display font-[800] text-3xl md:text-5xl text-[#1A1A1A]">{t.methodology.step3Title}</h3>
             </Reveal>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">

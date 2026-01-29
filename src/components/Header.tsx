@@ -9,7 +9,7 @@ const Header: React.FC = () => {
       <nav className="w-fit mx-auto flex items-center justify-center px-8 py-4 rounded-full bg-white/10 backdrop-blur-xl border border-white/20">
         <div className="flex items-center gap-10">
           <div className="flex items-center">
-            <img src="/logo eva principal.png" alt="Eva Logo" className="h-10 w-auto" />
+            <img src={import.meta.env.BASE_URL + "logo-eva-principal.png"} alt="Eva Logo" className="h-10 w-auto" />
           </div>
           <ul className="hidden md:flex items-center gap-8 text-[11px] font-semibold uppercase tracking-widest text-white/90">
             <li><a className="hover:text-primary transition-colors" href="#quem-somos">{t.header.whatWeDo}</a></li>

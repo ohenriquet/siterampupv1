@@ -1,38 +1,62 @@
-# Site Eva Ramp-up
+# Eva - AI Ramp-up Buddy Scope
 
-Uma landing page de alta conversão para a Eva, focada em onboarding e produtividade com Buddy System. O projeto utiliza um design moderno com glassmorphism e animações fluidas.
+Este projeto foi inicializado com [Vite](https://vitejs.dev/).
 
-## Tecnologias
+## Desenvolvimento
 
-- **React** (Vite)
-- **TypeScript**
-- **Tailwind CSS**
-- **Framer Motion** (ou animações CSS puras)
+1.  **Instalar dependências**:
+    ```bash
+    npm install
+    ```
+2.  **Rodar servidor local**:
+    ```bash
+    npm run dev
+    ```
 
-## Como rodar localmente
+## Deploy (WordPress)
 
-1. Instale as dependências:
-   ```bash
-   npm install
-   ```
+O projeto está configurado para ser embarcado em um tema WordPress.
 
-2. Inicie o servidor de desenvolvimento:
-   ```bash
-   npm run dev
-   ```
+### Como gerar o build para WP
 
-3. Acesse via `http://localhost:5173` (ou a porta indicada no terminal).
-
-## Build e Deploy
-
-Para gerar a versão de produção:
+Use o comando dedicado que gera o build e copia para a pasta de destino:
 
 ```bash
-npm run build
+npm run build:wp
 ```
 
-O deploy está configurado para o GitHub Pages:
+Por padrão, isso cria uma pasta `wp-dist` na raiz do projeto.
+Para mudar o destino, use a variável de ambiente `WP_BUILD_DEST`:
 
-```bash
-npm run deploy
+**Windows (PowerShell):**
+```powershell
+$env:WP_BUILD_DEST="C:\Caminho\Para\Seu\Tema\assets\eva-home"; npm run build:wp
+```
+
+### Estrutura dos Arquivos
+
+O build vai gerar:
+- `manifest.json`: Mapa de arquivos gerados pelo Vite.
+- `assets/`: Pasta contendo JS e CSS (com hashes).
+- `logos/`, `cases/`, etc: Arquivos estáticos.
+- `index.html`: Entry point (HTML).
+
+### Integração com WordPress (PHP)
+
+O WordPress deve:
+1.  Ler o arquivo `manifest.json`.
+2.  Encontrar a entrada `index.html`.
+3.  Enfileirar o CSS listado em `css`.
+4.  Enfileirar o arquivo JS principal listado em `file` (como module).
+5.  Injetar `<base href="...">` para corrigir caminhos relativos de imagens.
+
+Exemplo de estrutura no servidor:
+```
+/wp-content/themes/seu-tema/assets/eva-home/
+  ├── manifest.json
+  ├── assets/
+  │   ├── index-XXXX.js
+  │   └── index-YYYY.css
+  └── logos/
+      └── cubo.png
 ```

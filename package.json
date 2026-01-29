@@ -8,7 +8,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "build:wp": "node scripts/deploy-wp.cjs",
+    "deploy:wp": "npm run build:wp"
   },
   "dependencies": {
     "react": "^19.2.3",
