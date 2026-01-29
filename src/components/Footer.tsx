@@ -15,15 +15,24 @@ const Footer: React.FC = () => {
 
           {/* Nav Links */}
           <nav className="flex gap-8">
-            {t.footer.nav.map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="text-[#4A30E4] font-medium text-sm hover:text-[#3b25c7] transition-colors"
-              >
-                {item}
-              </a>
-            ))}
+            {t.footer.nav.map((item, index) => {
+              const footerLinks = [
+                "/sobre-a-empresa/",
+                "/cases/",
+                "/blog/",
+                "/recursos/"
+              ];
+
+              return (
+                <a
+                  key={item}
+                  href={footerLinks[index] || '#'}
+                  className="text-[#4A30E4] font-medium text-sm hover:text-[#3b25c7] transition-colors"
+                >
+                  {item}
+                </a>
+              );
+            })}
           </nav>
 
           {/* Center Logo */}
